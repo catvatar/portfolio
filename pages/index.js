@@ -1,9 +1,9 @@
 import Head from 'next/head';
-import Layout, { siteTitle } from '../components/layout';
-import utilStyles from '../styles/utils.module.css';
+//import Layout, { siteTitle } from '../components/layout';
+//import utilStyles from '../styles/utils.module.css';
 import { getSortedPostsData } from '../lib/posts';
 import Link from 'next/link';
-import Date from '../components/date';
+//import Date from '../components/date';
 
 
 export async function getStaticProps() {
@@ -18,25 +18,26 @@ export async function getStaticProps() {
 
 export default function Home({ allPostsData }) {
   return (
-    <Layout home>
+    <>
       <Head>
-        <title>{siteTitle}</title>
+        <title>siteTitle</title>
       </Head>
-      <section className={utilStyles.headingMd}>
+      <section>
         <p>[Your Self Introduction]</p>
+        <div class="bg-teal-400 sm:bg-red-400 md:bg-green-400 lg:bg-yellow-400 xl:bg-indigo-400 py-2 px-4 text-center">Resize window</div>
         <p>
           (This is a sample website - you’ll be building a site like this on{' '}
           <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
         </p>
       </section>
-      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-        <h2 className={utilStyles.headingLg}>Blog</h2>
-        <ul className={utilStyles.list}>
+      <section>
+        <h2>Blog</h2>
+        <ul>
           {allPostsData.map(({ id, date, title }) => (
-            <li className={utilStyles.listItem} key={id}>
+            <li key={id}>
             <Link href={`/posts/${id}`}>{title}</Link>
             <br />
-            <small className={utilStyles.lightText}>
+            <small>
               <Date dateString={date} />
             </small>
           </li>
@@ -44,6 +45,6 @@ export default function Home({ allPostsData }) {
           ))}
         </ul>
       </section>
-    </Layout>
+    </>
   );
 }

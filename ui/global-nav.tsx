@@ -13,22 +13,22 @@ export function GlobalNav() {
   const close = () => setIsOpen(false);
 
   return (
-    <div className="fixed top-0 z-10 flex w-full flex-col border-b border-gray-800 bg-black lg:bottom-0 lg:z-auto lg:w-72 lg:border-b-0 lg:border-r lg:border-gray-800">
-      <div className="flex h-14 items-center py-4 px-4 lg:h-auto">
+    // <div className="fixed top-0 z-10 flex w-full flex-col border-b border-gray-800 bg-black lg:bottom-0 lg:z-auto lg:w-72 lg:border-b-0 lg:border-r lg:border-gray-800">
+    <div className="fixed w-full flex-col border-b border-gray-50 bg-black">
+      <div className="py-4 px-4 text-gray-400 hover:text-gray-50">
+        AAAAAAAAAAAAAAA
+      </div>
+      {/* <div className="flex h-14 items-center py-4 px-4 lg:h-auto">
         <Link
           href="/"
           className="group flex w-full items-center gap-x-2.5"
           onClick={close}
         >
-          <div className="h-7 w-7 rounded-full border border-white/30 group-hover:border-white/50">
-            {/* <NextLogo /> */}
-          </div>
-
           <h3 className="font-semibold tracking-wide text-gray-400 group-hover:text-gray-50">
             App Router
           </h3>
         </Link>
-      </div>
+      </div> */}
       <button
         type="button"
         className="group absolute right-0 top-0 flex h-14 items-center gap-x-2 px-4 lg:hidden"
@@ -45,9 +45,11 @@ export function GlobalNav() {
           hidden: !isOpen,
         })}
       >
-        <nav className="space-y-6 px-2 py-5">
-          List
-        </nav>
+        <Link href="/" className="space-y-6 px-2 py-5">
+          <h3 className="font-semibold tracking-wide text-gray-400 group-hover:text-gray-50">
+            List
+          </h3>
+        </Link>
       </div>
     </div>
   );
