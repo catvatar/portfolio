@@ -18,6 +18,9 @@ export default {
         'secondary': '#a7c957',
         'detail': '#bc4749'
       },
+      spacing: {
+        'sidebar': '18rem',
+      },
     },
   },
   plugins: [require('@tailwindcss/typography'), require('@tailwindcss/forms')],

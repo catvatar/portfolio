@@ -8,8 +8,8 @@ export function GlobalNav() {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <>
-      <SideNav stateProp={ [isOpen, setIsOpen] }/>
-      <TopNav stateProp={ [isOpen, setIsOpen] }/>
+        <SideNav stateProp={ [isOpen, setIsOpen] }/>
+        <TopNav stateProp={ [isOpen, setIsOpen] }/>
     </>
   );
 }

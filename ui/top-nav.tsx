@@ -8,10 +8,9 @@ import { useContext } from 'react';
 export function TopNav({ stateProp }) {
   const [isOpen, setIsOpen] = stateProp;
   const root = useContext(isHome);
-  console.log('Top Nav:', root);
 
   return (
-    <nav className={clsx('bg-secondary border-b-detail border-b-4','w-full h-14 top-0 lg:sticky', {'fixed' : isOpen})}>
+    <nav className={clsx('bg-secondary border-b-detail border-b-4','w-full h-14 top-0 lg:sticky lg:ml-sidebar', {'fixed' : isOpen})}>
       <div className='grid grid-flow-col justify-stretch content-center h-full px-4'>
         <div className='judtify-self-start'>
           Aleksander Gogol
