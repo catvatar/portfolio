@@ -1,5 +1,6 @@
 ---
 title: 'Two Forms of Pre-rendering'
+tags: ['Next.js', 'React', 'IT', 'Template']
 date: '2020-01-01'
 ---
 

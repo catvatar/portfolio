@@ -9,7 +9,7 @@ export function SideNav({ stateProp }) {
   const root = useContext(isHome);
 
   return (
-    <div className={clsx('fixed top-0 bg-secondary border-r-4 border-detail bottom-0 z-auto w-sidebar text-primary', {'invisible lg:visible' : !isOpen})}>
+    <div className={clsx('fixed top-0 bg-secondary border-r-4 border-detail bottom-0 z-auto w-sidebar', {'invisible lg:visible' : !isOpen})}>
       <div
         className={clsx(
           'lg:block',
@@ -17,7 +17,10 @@ export function SideNav({ stateProp }) {
           hidden: !isOpen,
         })}
       >
-        List
+        <div className='px-8 py-8'>
+          <h1>List:</h1>
+          <p>Items</p>
+        </div>
       </div>
     </div>
   );
