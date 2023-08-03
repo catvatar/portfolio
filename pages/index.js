@@ -26,10 +26,15 @@ export default function Home({ allPostsData }) {
           <br />
           <section>
             <h2>Blogs</h2>
+            <ul>
+              {allPostsData.map(({ id, tags, title }) => (
+                <li key={id}>
+                  <BlogElement postPath={`/posts/${id}`} postTags={tags} postTitle={title} />
+                  <br />
+                </li>
+              ))}
+            </ul>
           </section>
-
-
-          <BlogElement postPath='/' postTitle='title' postTags={['tag1','tag2']}/>
           <br />
           <section className=''>
             <p>[Your Self Introduction]</p>

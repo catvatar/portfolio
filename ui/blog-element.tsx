@@ -4,7 +4,6 @@ export function BlogElement({
     postPath,
     postTitle,
     postTags,
-    id,
   }) {
   return (
     <Link
@@ -17,8 +16,8 @@ export function BlogElement({
 
             </div>
           </div>
-          <div className='border-0 grid grid-cols-2 gap-4'>
-            <ul>
+          <div className='border-0'>
+            <ul className='grid grid-cols-2 gap-0'>
               {postTags.map((tag)=>{return(
                 <li key={tag}> 
                   {tag}
