@@ -1,6 +1,7 @@
 ---
 title: 'When to Use Static Generation v.s. Server-side Rendering'
 tags: ['Next.js', 'React', 'IT', 'Template']
+img: '@/posts/template-gradient.png'
 date: '2020-01-02'
 ---
 

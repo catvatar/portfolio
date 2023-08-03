@@ -1,6 +1,7 @@
 ---
 title: 'Two Forms of Pre-rendering'
 tags: ['Next.js', 'React', 'IT', 'Template']
+img: '@/posts/template-gradient.png'
 date: '2020-01-01'
 ---
 
