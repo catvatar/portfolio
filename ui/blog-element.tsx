@@ -13,9 +13,9 @@ export function BlogElement({
     >
       <div className='border-4 border-r-0 border-b-0 border-detail h-44'>
         <div className='border-0 border-b-4 border-detail h-2/3 grid grid-flow-col auto-cols-max gap-0 justify-items-start'>
-          <div className='border-0 border-r-4 relative border-detail'>
+          <div className='border-0 border-r-4 w-52 relative border-detail'>
             <Image
-              className='object-cover h-full w-full'
+              className='object-scale-down'
               src={img}
               fill={true}
               alt='img'
