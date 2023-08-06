@@ -8,6 +8,13 @@ export default function App({ Component, pageProps }) {
     <isHome.Provider value={Component.name == 'Home'}>
       <GlobalNav />
     </isHome.Provider>
-    <Component {...pageProps} />
+    <div className='lg:ml-sidebar bg-primary py-6'>
+      <div className='flex justify-center'>
+        <div className='w-5/6'>
+          <Component {...pageProps} />
+        </div>
+      </div>
+      <div className="w-full h-screen bg-primary"></div>
+    </div>
   </>);
 }

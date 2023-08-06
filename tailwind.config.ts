@@ -21,6 +21,13 @@ export default {
       spacing: {
         'sidebar': '18rem',
       },
+      typography: {
+        DEFAULT: {
+          css:{
+            
+          }
+        }
+      }
     },
   },
   plugins: [require('@tailwindcss/typography'), require('@tailwindcss/forms')],

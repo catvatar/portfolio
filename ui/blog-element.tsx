@@ -11,18 +11,17 @@ export function BlogElement({
     <Link
       href={`${postPath}`}
     >
-      <div className='border-4 border-r-0 border-b-0 border-detail h-44'>
+      <div className='border-4 border-r-0 border-b-0 border-detail h-58'>
         <div className='border-0 border-b-4 border-detail h-2/3 grid grid-flow-col auto-cols-max gap-0 justify-items-start'>
-          <div className='border-0 border-r-4 w-52 relative border-detail'>
+          <div className='border-0 border-r-4 w-64 border-detail'>
             <Image
-              className='object-scale-down'
+              height={0}
               src={img}
-              fill={true}
               alt='img'
             />
           </div>
           <div className='border-0'>
-            <ul className='grid grid-cols-2 gap-0'>
+            <ul className='grid grid-cols-1 gap-2 h-32 overflow-hidden lg:grid-cols-3'>
               {postTags.map((tag)=>{return(
                 <li key={tag}> 
                   {tag}
