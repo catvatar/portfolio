@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import { getSortedPostsData } from '../lib/posts';
 import { BlogElement } from '../ui/blog-element';
+import RootLayout from '../app/layout';
 
 
 export async function getStaticProps() {
@@ -15,7 +16,7 @@ export async function getStaticProps() {
 
 export default function Home({ allPostsData }) {
   return (
-    <>
+    <RootLayout home>
       <Head>
         <title>Aleksander Portfolio</title>
       </Head>
@@ -29,6 +30,6 @@ export default function Home({ allPostsData }) {
           ))}
         </ul>
       </section>
-    </>
+    </RootLayout>
   );
 }

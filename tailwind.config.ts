@@ -19,6 +19,8 @@ export default {
         // 'secondary-dark': '#5fa8d3',
         // 'detail-light': '#'
         // 'detail-dark': '#1b4965'
+
+        //Green
         'primary': '#DAD7CD',
         'secondary-light': '#A3B18A',
         'secondary-dark': '#588157',

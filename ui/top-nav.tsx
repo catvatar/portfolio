@@ -1,6 +1,9 @@
 'use client';
 
 import clsx from 'clsx';
+import Link from 'next/link';
+import { isHome } from '../public/Context';
+import { useContext } from 'react';
 
 export function TopNav({ stateProp }) {
   const [isOpen, setIsOpen] = stateProp;
@@ -10,6 +13,13 @@ export function TopNav({ stateProp }) {
       <div className='grid grid-flow-col justify-stretch content-center h-full px-4'>
         <div className='judtify-self-start'>
           Aleksander Gogol
+        </div>
+        <div className={clsx('judtify-self-start', {'hidden' : useContext(isHome)})}>
+          <Link
+            href="/"
+          >
+            Back
+          </Link>
         </div>
         <div className='flex justify-end'>
           <button
