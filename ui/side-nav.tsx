@@ -9,11 +9,11 @@ export function SideNav({ stateProp }) {
   const root = useContext(isHome);
 
   return (
-    <div className={clsx('fixed top-0 bg-secondary border-r-4 border-detail bottom-0 z-auto w-sidebar', {'invisible lg:visible' : !isOpen})}>
+    <div className={clsx('fixed top-0 bg-secondary-light border-r-4 border-detail-dark bottom-0 z-auto w-sidebar', {'invisible lg:visible' : !isOpen})}>
       <div
         className={clsx(
           'lg:block',
-          {'fixed inset-x-0 bottom-0 top-14 bg-secondary': isOpen,
+          {'fixed inset-x-0 bottom-0 top-14 bg-secondary-light': isOpen,
           hidden: !isOpen,
         })}
       >
