@@ -25,7 +25,9 @@ export default {
         'secondary-light': '#A3B18A',
         'secondary-dark': '#588157',
         'detail-light': '#3A5A40',
-        'detail-dark': '#344E41'
+        'detail-dark': '#344E41',
+
+        'debug': '#ff0000'
       },
       spacing: {
         'sidebar': '18rem',

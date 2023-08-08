@@ -2,6 +2,7 @@ import clsx from 'clsx';
 import Image from 'next/image';
 import { postsContext } from '../public/Context';
 import { useContext } from 'react';
+import { useState } from 'react';
 
 export function SideNav({ stateProp }) {
   const [isOpen, setIsOpen] = stateProp;
@@ -40,9 +41,8 @@ export function SideNav({ stateProp }) {
           </section>
           <section>
             <ul className='grid grid-cols-4 lg:grid-cols-3 gap-1'>
-              {uniqueTags.map((item)=>{return <li className={clsx('col-auto text-black hover:text-white',{'text-detail-dark':false})} key={item} onClick={()=>{
-                
-                console.log(item);
+              {uniqueTags.map((item)=>{return <li className={clsx('col-auto text-black hover:text-white',{'text-debug':clickedTags.includes(item)})} key={item} onClick={()=>{
+                clickedTags.includes(item)?setClickedTags(clickedTags.toSpliced(clickedTags.indexOf(item),1)):setClickedTags([...clickedTags, item]);
               }}>{item}</li>})}
             </ul>
           </section>
