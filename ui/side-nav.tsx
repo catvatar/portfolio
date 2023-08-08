@@ -1,12 +1,16 @@
-'use client';
-
 import clsx from 'clsx';
-import { isHome } from '../public/Context';
+import Image from 'next/image';
+import { postsContext } from '../public/Context';
 import { useContext } from 'react';
 
 export function SideNav({ stateProp }) {
   const [isOpen, setIsOpen] = stateProp;
-  const root = useContext(isHome);
+  const postData = useContext(postsContext);
+  const uniqueTags = postData?postData.reduce((acc, tags) => {
+    return [...acc, ...tags.tags.filter((tag) => {
+      return !acc.includes(tag);
+    })];
+  },[]):[];
 
   return (
     <div className={clsx('fixed top-0 bg-secondary-light border-r-4 border-detail-dark bottom-0 z-auto w-sidebar', {'invisible lg:visible' : !isOpen})}>
@@ -18,8 +22,25 @@ export function SideNav({ stateProp }) {
         })}
       >
         <div className='px-8 py-8'>
-          <h1>List:</h1>
-          <p>Items</p>
+          <section>
+            <div className='px-3 pb-4'>
+              <Image
+                src='/template-gradient.png'
+                width={9999}
+                height={0}
+                alt='test'
+              />
+            </div>
+            
+            <h1>O mnie</h1>
+            <p>Jakiś tekst</p>
+            <hr className='border-black my-3' />
+          </section>
+          <section>
+            <ul className='grid grid-cols-4 lg:grid-cols-3 gap-1'>
+              {uniqueTags.map((tag)=>{return <li className='col-auto hover:text-white' key={tag} onClick={()=>{console.log('Clicked: ',tag)}}>{tag}</li>})}
+            </ul>
+          </section>
         </div>
       </div>
     </div>
