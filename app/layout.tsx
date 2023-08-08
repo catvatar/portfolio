@@ -6,7 +6,7 @@ export default function RootLayout({
   home,
 }: {
   children: React.ReactNode;
-  home: null;
+  home: boolean;
 }) {
 
   return (

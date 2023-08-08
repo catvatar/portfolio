@@ -6,14 +6,14 @@ import { useState } from 'react';
 
 export function SideNav({ stateProp }) {
   const [isOpen, setIsOpen] = stateProp;
-  const postData = useContext(postsContext);
+  const postData:any = useContext(postsContext);
   const uniqueTags = postData?postData.reduce((acc, tags) => {
     return [...acc, ...tags.tags.filter((tag) => {
       return !acc.includes(tag);
     })];
   },[]):[];
 
-  const [clickedTags, setClickedTags] = useState([]);
+  const [clickedTags, setClickedTags] = useState<string[]>([]);
 
   return (
     <div className={clsx('fixed top-0 bg-secondary-light border-r-4 border-detail-dark bottom-0 z-auto w-sidebar', {'invisible lg:visible' : !isOpen})}>
@@ -42,7 +42,7 @@ export function SideNav({ stateProp }) {
           <section>
             <ul className='grid grid-cols-4 lg:grid-cols-3 gap-1'>
               {uniqueTags.map((item)=>{return <li className={clsx('col-auto text-black hover:text-white',{'text-debug':clickedTags.includes(item)})} key={item} onClick={()=>{
-                clickedTags.includes(item)?setClickedTags(clickedTags.toSpliced(clickedTags.indexOf(item),1)):setClickedTags([...clickedTags, item]);
+                clickedTags.includes(item)?setClickedTags(clickedTags.filter((elem)=>elem!==item)):setClickedTags([...clickedTags, item]);
               }}>{item}</li>})}
             </ul>
           </section>
