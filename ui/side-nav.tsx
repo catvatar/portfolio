@@ -2,12 +2,10 @@ import clsx from 'clsx';
 import Image from 'next/image';
 import { postsContext } from '../public/Context';
 import { useContext } from 'react';
-import { useState } from 'react';
 
 export function SideNav({ stateProp }) {
   const [isOpen, setIsOpen] = stateProp;
   const postData = useContext(postsContext);
-  
   const uniqueTags = postData?postData.reduce((acc, tags) => {
     return [...acc, ...tags.tags.filter((tag) => {
       return !acc.includes(tag);
@@ -38,7 +36,7 @@ export function SideNav({ stateProp }) {
             
             <h1>O mnie</h1>
             <p>Jakiś tekst</p>
-            <hr className='border-black border-2 my-3' />
+            <hr className='border-black my-3' />
           </section>
           <section>
             <ul className='grid grid-cols-4 lg:grid-cols-3 gap-1'>
