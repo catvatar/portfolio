@@ -25,12 +25,12 @@ export default function Home({ allPostsData }) {
         </Head>
         <section>
           <ul>
-            {allPostsData.map(({ id, tags, title }) => (
+            {allPostsData.map(({ id, tags, title }) => {(
               <li key={id}>
                 <BlogElement postPath={`/posts/${id}`} postTags={tags} postTitle={title} />
                 <br />
               </li>
-            ))}
+            )})}
           </ul>
         </section>
       </RootLayout>

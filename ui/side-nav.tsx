@@ -2,15 +2,22 @@ import clsx from 'clsx';
 import Image from 'next/image';
 import { postsContext } from '../public/Context';
 import { useContext } from 'react';
+import { useState } from 'react';
 
 export function SideNav({ stateProp }) {
   const [isOpen, setIsOpen] = stateProp;
   const postData = useContext(postsContext);
+  
   const uniqueTags = postData?postData.reduce((acc, tags) => {
     return [...acc, ...tags.tags.filter((tag) => {
       return !acc.includes(tag);
     })];
   },[]):[];
+
+  const [clickedTags, setClickedTags] = useState(uniqueTags.map(item=>{return {
+    tag:item,
+    clicked:false,
+  }}));
 
   return (
     <div className={clsx('fixed top-0 bg-secondary-light border-r-4 border-detail-dark bottom-0 z-auto w-sidebar', {'invisible lg:visible' : !isOpen})}>
@@ -34,11 +41,15 @@ export function SideNav({ stateProp }) {
             
             <h1>O mnie</h1>
             <p>Jakiś tekst</p>
-            <hr className='border-black my-3' />
+            <hr className='border-black border-2 my-3' />
           </section>
           <section>
             <ul className='grid grid-cols-4 lg:grid-cols-3 gap-1'>
-              {uniqueTags.map((tag)=>{return <li className='col-auto hover:text-white' key={tag} onClick={()=>{console.log('Clicked: ',tag)}}>{tag}</li>})}
+              {clickedTags.map(({tag, clicked})=>{return <li className={clsx('col-auto text-black hover:text-white',{'text-detail-dark':clicked})} key={tag} onClick={()=>{
+                setClickedTags(clickedTags.map(item=>{
+                  return item.tag===tag?{tag:tag,clicked:!item.clicked,}:item;
+                }));
+              }}>{tag}</li>})}
             </ul>
           </section>
         </div>
