@@ -14,10 +14,7 @@ export function SideNav({ stateProp }) {
     })];
   },[]):[];
 
-  const [clickedTags, setClickedTags] = useState(uniqueTags.map(item=>{return {
-    tag:item,
-    clicked:false,
-  }}));
+  const [clickedTags, setClickedTags] = useState([]);
 
   return (
     <div className={clsx('fixed top-0 bg-secondary-light border-r-4 border-detail-dark bottom-0 z-auto w-sidebar', {'invisible lg:visible' : !isOpen})}>
@@ -45,11 +42,10 @@ export function SideNav({ stateProp }) {
           </section>
           <section>
             <ul className='grid grid-cols-4 lg:grid-cols-3 gap-1'>
-              {clickedTags.map(({tag, clicked})=>{return <li className={clsx('col-auto text-black hover:text-white',{'text-detail-dark':clicked})} key={tag} onClick={()=>{
-                setClickedTags(clickedTags.map(item=>{
-                  return item.tag===tag?{tag:tag,clicked:!item.clicked,}:item;
-                }));
-              }}>{tag}</li>})}
+              {uniqueTags.map((item)=>{return <li className={clsx('col-auto text-black hover:text-white',{'text-detail-dark':false})} key={item} onClick={()=>{
+                
+                console.log(item);
+              }}>{item}</li>})}
             </ul>
           </section>
         </div>
