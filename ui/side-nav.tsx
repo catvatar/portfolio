@@ -3,17 +3,26 @@ import Image from 'next/image';
 import { postsContext } from '../public/Context';
 import { useContext } from 'react';
 import { useState } from 'react';
+import { useSearchParams } from 'next/navigation';
+import { start } from 'repl';
 
 export function SideNav({ stateProp }) {
   const [isOpen, setIsOpen] = stateProp;
+
   const postData:any = useContext(postsContext);
+
   const uniqueTags = postData?postData.reduce((acc, tags) => {
     return [...acc, ...tags.tags.filter((tag) => {
       return !acc.includes(tag);
     })];
   },[]):[];
 
-  const [clickedTags, setClickedTags] = useState<string[]>([]);
+  const iTag = useSearchParams()?.get('tag');
+  const inputTag = iTag?iTag:'';
+  const startingArr = uniqueTags.includes(inputTag)?[inputTag]:[];
+  console.log(startingArr);
+
+  const [clickedTags, setClickedTags] = useState<string[]>(startingArr);
 
   return (
     <div className={clsx('fixed top-0 bg-secondary-light border-r-4 border-detail-dark bottom-0 z-auto w-sidebar', {'invisible lg:visible' : !isOpen})}>

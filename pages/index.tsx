@@ -4,8 +4,6 @@ import { BlogElement } from '../ui/blog-element';
 import RootLayout from '../app/layout';
 import { postsContext } from '../public/Context';
 
-
-
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData();
   return {
