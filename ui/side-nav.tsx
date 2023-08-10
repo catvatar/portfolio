@@ -19,7 +19,6 @@ export function SideNav({ stateProp }) {
   const iTag = useSearchParams()?.get('tag');
   const inputTag = iTag?iTag:'';
   const startingArr = uniqueTags.includes(inputTag)?[inputTag]:[];
-  console.log(startingArr);
 
   const [clickedTags, setClickedTags] = useState<string[]>(startingArr);
 

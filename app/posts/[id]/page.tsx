@@ -12,17 +12,13 @@ import Layout from '../../../lib/layout'
 // }
 
 
-export async function getStaticPaths() {
+export async function generateStaticParams() {
   const paths = getAllPostIds();
-  return {
-    paths,
-    fallback: false,
-  };
+  return paths;
 }
 
 export default async function Post({ params }) {
   const postData:any = await getPostData(params.id);
-  // console.log(postData);
 
   return (
     <Layout>
