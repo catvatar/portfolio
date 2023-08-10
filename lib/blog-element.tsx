@@ -13,7 +13,7 @@ export function BlogElement({
     >
       <div className='border-4 border-r-0 border-b-0 border-detail-dark h-58'>
         <div className='border-0 border-b-4 border-detail-dark h-2/3 grid grid-flow-col auto-cols-max gap-0 justify-items-start'>
-          <div className='border-0 border-r-4 w-64 border-detail-dark'>
+          <div className='border-0 border-r-4 w-64 border-detail-dark lg:w-80'>
             <Image
               height={0}
               src={img}

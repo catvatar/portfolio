@@ -1,8 +1,7 @@
 import clsx from 'clsx';
 import Image from 'next/image';
-import { postsContext } from '../public/Context';
-import { useContext } from 'react';
-import { useState } from 'react';
+import { postsContext, tagsContext } from '../public/Context';
+import { useState, useContext } from 'react';
 import { useSearchParams } from 'next/navigation';
 
 export function SideNav({ stateProp }) {
@@ -21,6 +20,9 @@ export function SideNav({ stateProp }) {
   const startingArr = uniqueTags.includes(inputTag)?[inputTag]:[];
 
   const [clickedTags, setClickedTags] = useState<string[]>(startingArr);
+  
+  const [tagsState, setTagsState] = useContext(tagsContext);
+  setTagsState(clickedTags);
 
   return (
     <div className={clsx('fixed top-0 bg-secondary-light border-r-4 border-detail-dark bottom-0 z-auto w-sidebar', {'invisible lg:visible' : !isOpen})}>
@@ -31,9 +33,9 @@ export function SideNav({ stateProp }) {
           hidden: !isOpen,
         })}
       >
-        <div className='px-8 py-8'>
+        <div className='p-8'>
           <section>
-            <div className='px-3 pb-4'>
+            <div className='mx-3 mb-4 border-8 border-secondary-dark'>
               <Image
                 src='/template-gradient.png'
                 width={9999}

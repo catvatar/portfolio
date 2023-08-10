@@ -1,5 +1,5 @@
 import { getSortedPostsData } from '../lib/posts';
-import { BlogElement } from '../ui/blog-element';
+import BlogList from '../lib/blog-list';
 import Layout from '../lib/layout';
 import { PostsContextProvider } from '../public/Context';
 
@@ -11,12 +11,7 @@ export default function Home() {
       <Layout home>
         <section>
           <ul>
-            {allPostsData.map(({ id, tags, title }) => (
-              <li key={id}>
-                <BlogElement postPath={`/posts/${id}`} postTags={tags} postTitle={title} />
-                <br />
-              </li>
-            ))}
+            <BlogList param={allPostsData} />
           </ul>
         </section>
       </Layout>

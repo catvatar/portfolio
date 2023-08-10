@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import '../styles/global.css';
+import { TagsContextProvider } from '../public/Context';
 
 export const metadata: Metadata = {
   title: 'Aleksander Gogol Portfolio',
@@ -16,7 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body><TagsContextProvider>{children}</TagsContextProvider></body>
     </html>
   )
 }
