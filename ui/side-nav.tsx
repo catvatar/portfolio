@@ -4,7 +4,6 @@ import { postsContext } from '../public/Context';
 import { useContext } from 'react';
 import { useState } from 'react';
 import { useSearchParams } from 'next/navigation';
-import { start } from 'repl';
 
 export function SideNav({ stateProp }) {
   const [isOpen, setIsOpen] = stateProp;

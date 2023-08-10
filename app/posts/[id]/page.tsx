@@ -1,15 +1,15 @@
-import { getAllPostIds, getPostData } from '../../lib/posts';
+import { getAllPostIds, getPostData } from '../../../lib/posts';
 import Head from 'next/head';
-import RootLayout from '../../app/layout'
+import Layout from '../../../lib/layout'
 
-export async function getStaticProps({ params }) {
-  const postData = await getPostData(params.id);
-  return {
-    props: {
-      postData,
-    },
-  };
-}
+// export async function getStaticProps({ params }) {
+//   const postData = await getPostData(params.id);
+//   return {
+//     props: {
+//       postData,
+//     },
+//   };
+// }
 
 
 export async function getStaticPaths() {
@@ -20,9 +20,12 @@ export async function getStaticPaths() {
   };
 }
 
-export default function Post({ postData }) {
+export default async function Post({ params }) {
+  const postData:any = await getPostData(params.id);
+  // console.log(postData);
+
   return (
-    <RootLayout>
+    <Layout>
       <Head>
         <title>{postData.title}</title>
       </Head>
@@ -30,7 +33,7 @@ export default function Post({ postData }) {
         <h1 className='flex justify-center'>{postData.title}</h1>
         <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
       </article>
-    </RootLayout>
+    </Layout>
   );
 }
 

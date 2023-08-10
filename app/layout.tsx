@@ -1,27 +1,22 @@
-import { GlobalNav } from '../ui/global-nav';
-import { isHome } from '../public/Context';
+import { Metadata } from 'next';
+import '../styles/global.css';
+
+export const metadata: Metadata = {
+  title: 'Aleksander Gogol Portfolio',
+  description: 'Portfolio Aleksander Gogol',
+  generator: 'Next.js',
+  keywords: ['Next.js', 'React', 'JavaScript', 'Portfolio'],
+  authors: [{ name: 'Aleksander Gogol' }],
+}
 
 export default function RootLayout({
   children,
-  home,
 }: {
-  children: React.ReactNode;
-  home: boolean;
+  children: React.ReactNode
 }) {
-
   return (
-    <div className='bg-primary'>
-      <isHome.Provider value={home}>
-        <GlobalNav />
-      </isHome.Provider>
-      <div className='lg:ml-sidebar py-6'>
-        <div className='flex justify-center'>
-          <div className='w-5/6'>
-            {children}
-          </div>
-        </div>
-        <div className="w-full h-screen bg-primary"></div>
-      </div>
-    </div>
-  );
+    <html lang="en">
+      <body>{children}</body>
+    </html>
+  )
 }
