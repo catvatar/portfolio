@@ -11,7 +11,7 @@ export default function Home() {
       <Layout home>
         <section>
           <ul>
-            <BlogList param={allPostsData} />
+            <BlogList posts={allPostsData} />
           </ul>
         </section>
       </Layout>

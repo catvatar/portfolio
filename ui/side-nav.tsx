@@ -1,5 +1,6 @@
 import clsx from 'clsx';
 import Image from 'next/image';
+import { getSortedPostsData } from '../lib/posts';
 import { postsContext, tagsContext } from '../public/Context';
 import { useState, useContext } from 'react';
 import { useSearchParams } from 'next/navigation';
@@ -7,13 +8,20 @@ import { useSearchParams } from 'next/navigation';
 export function SideNav({ stateProp }) {
   const [isOpen, setIsOpen] = stateProp;
 
-  const postData:any = useContext(postsContext);
-
-  const uniqueTags = postData?postData.reduce((acc, tags) => {
-    return [...acc, ...tags.tags.filter((tag) => {
-      return !acc.includes(tag);
-    })];
-  },[]):[];
+  const uniqueTags = (()=>{
+    const postData:any = useContext(postsContext);
+    // const postData:any = getSortedPostsData();
+    return postData?postData.reduce(
+      (acc, tags) => {
+        return [...acc, ...tags.tags.filter(
+          (tag) => {
+            return !acc.includes(tag);
+          }
+        )];
+      },
+      []
+      ):[];
+  })();
 
   const iTag = useSearchParams()?.get('tag');
   const inputTag = iTag?iTag:'';
@@ -50,9 +58,18 @@ export function SideNav({ stateProp }) {
           </section>
           <section>
             <ul className='grid grid-cols-4 lg:grid-cols-3 gap-1'>
-              {uniqueTags.map((item)=>{return <li className={clsx('col-auto text-black hover:text-white',{'text-debug':clickedTags.includes(item)})} key={item} onClick={()=>{
-                clickedTags.includes(item)?setClickedTags(clickedTags.filter((elem)=>elem!==item)):setClickedTags([...clickedTags, item]);
-              }}>{item}</li>})}
+              {uniqueTags.map(
+                (item)=>{
+                  return (
+                    <li className={clsx('col-auto text-black hover:text-white',{'text-debug':clickedTags.includes(item)})} 
+                      key={item} 
+                      onClick={()=>{
+                        clickedTags.includes(item)?setClickedTags(clickedTags.filter((elem)=>elem!==item)):setClickedTags([...clickedTags, item]);
+                      }}>{item}
+                    </li>
+                  )
+                }
+              )}
             </ul>
           </section>
         </div>

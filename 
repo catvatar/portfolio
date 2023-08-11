@@ -1,0 +1,294 @@
+[33mcommit acabd46f69a0f6cba8e95c9a3074bbcda9ed4a9c[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: catvatar <olekgogol@protonmail.com>
+Date:   Fri Aug 11 00:00:01 2023 +0200
+
+    Fully functional tags
+
+[33mcommit 2fb00592eeea463f3903421c1557d093f92c980f[m
+Author: catvatar <olekgogol@protonmail.com>
+Date:   Thu Aug 10 16:52:21 2023 +0200
+
+    updated getStaticPath
+
+[33mcommit 2320926356c1374b5dcc0219032f6c21e1f7b38c[m
+Author: catvatar <olekgogol@protonmail.com>
+Date:   Thu Aug 10 15:19:08 2023 +0200
+
+    migrated to app directory
+
+[33mcommit 7e2ce08e6dd39c3d2f76c2a7e03392a886fed3e3[m
+Author: catvatar <olekgogol@protonmail.com>
+Date:   Wed Aug 9 14:01:19 2023 +0200
+
+    added searchparams
+
+[33mcommit 0a939d79891c7f1a89f00522ae626c660eb1f74b[m
+Author: catvatar <olekgogol@protonmail.com>
+Date:   Tue Aug 8 16:54:06 2023 +0200
+
+    error in gitignore
+
+[33mcommit 05ffc7e8dab00c8c47f864371f4f5537394c490c[m
+Author: catvatar <olekgogol@protonmail.com>
+Date:   Tue Aug 8 16:52:10 2023 +0200
+
+    include error
+
+[33mcommit 262f7d6919979460b57968f411a0302b1df32e30[m
+Author: catvatar <olekgogol@protonmail.com>
+Date:   Tue Aug 8 16:49:30 2023 +0200
+
+    resolved type errors
+
+[33mcommit beb3016cffe2bcb8d9f5aea49f486030bba3ab40[m
+Author: catvatar <olekgogol@protonmail.com>
+Date:   Tue Aug 8 16:22:49 2023 +0200
+
+    different aproach tags
+
+[33mcommit da9eff6248589009397408966fc45b884f7c27c2[m
+Author: catvatar <olekgogol@protonmail.com>
+Date:   Tue Aug 8 16:05:57 2023 +0200
+
+    Revert "clickable tags"
+    
+    This reverts commit 35f1b946c2dadcc8f1a1c53b5766aac512d2ba84.
+
+[33mcommit aa56b38e31b2fb6cdb557704581520e4fbbe8375[m
+Author: catvatar <olekgogol@protonmail.com>
+Date:   Tue Aug 8 16:02:26 2023 +0200
+
+    test
+
+[33mcommit 35f1b946c2dadcc8f1a1c53b5766aac512d2ba84[m
+Author: catvatar <olekgogol@protonmail.com>
+Date:   Tue Aug 8 15:55:58 2023 +0200
+
+    clickable tags
+
+[33mcommit 0936fcc9f62c23b466ef37668f80c2e0fffe445c[m
+Author: catvatar <olekgogol@protonmail.com>
+Date:   Tue Aug 8 12:09:26 2023 +0200
+
+    working tags
+
+[33mcommit bb7832e447d6eb933a75c9717fedf9ed32ead7a0[m
+Merge: 44a2c92 cac838d
+Author: catvatar <olekgogol@protonmail.com>
+Date:   Mon Aug 7 14:23:44 2023 +0200
+
+    Merge conflict
+
+[33mcommit 44a2c928d30e8088eadc08f81f0fd3debc629e1a[m
+Author: catvatar <olekgogol@protonmail.com>
+Date:   Mon Aug 7 14:11:47 2023 +0200
+
+    FIXED BACK BUG
+
+[33mcommit cac838dc43350a2ca4103793c43ca231a0b51b41[m
+Author: catvatar <olekgogol@protonmail.com>
+Date:   Mon Aug 7 13:01:53 2023 +0200
+
+    repaired back button bug
+
+[33mcommit 679084f636d4bb32784a4e29c3f01c100400e17f[m
+Author: catvatar <olekgogol@protonmail.com>
+Date:   Mon Aug 7 12:26:09 2023 +0200
+
+    180 switch from _app to Layout
+
+[33mcommit 5edafc8105e90d0f37c9e6a141e5258af491f882[m
+Author: catvatar <olekgogol@protonmail.com>
+Date:   Sun Aug 6 18:15:34 2023 +0200
+
+    Styling decisions
+
+[33mcommit 13577093e959c71b3d00ae2cfae977700dc9343e[m
+Author: catvatar <olekgogol@protonmail.com>
+Date:   Fri Aug 4 14:32:02 2023 +0200
+
+    simplest working image
+
+[33mcommit e530b73a4ee8463b61d7210e58958172de197335[m
+Author: catvatar <olekgogol@protonmail.com>
+Date:   Fri Aug 4 00:46:39 2023 +0200
+
+    im fighting with Image class to render as intended
+
+[33mcommit 7d2126d597f6e406a88c66c001ace33d29cff38f[m
+Author: catvatar <olekgogol@protonmail.com>
+Date:   Thu Aug 3 21:35:07 2023 +0200
+
+    First working BlogElement
+
+[33mcommit 98e65d2b7cf6e12a1fc21c1fb7229e44e05589ef[m
+Author: catvatar <olekgogol@protonmail.com>
+Date:   Thu Aug 3 21:27:19 2023 +0200
+
+    Added blog-element
+
+[33mcommit 2de57e1bd2324777147fcf96c2e128f5cdddbe23[m
+Author: catvatar <olekgogol@protonmail.com>
+Date:   Wed Aug 2 13:42:57 2023 +0200
+
+    Finished side navigation panel
+
+[33mcommit f0ab1a5b01a9c64a6724cf56b47ae242f81fce46[m
+Author: catvatar <olekgogol@protonmail.com>
+Date:   Wed Aug 2 12:21:30 2023 +0200
+
+    Modified top bar and added side bar
+
+[33mcommit e9d4aabca532bd5df162122846045561551457a1[m
+Author: catvatar <olekgogol@protonmail.com>
+Date:   Mon Jul 31 23:28:10 2023 +0200
+
+    updated ui
+
+[33mcommit 9423f4569f502702bf3e20688190aaa10fc19f83[m
+Author: catvatar <olekgogol@protonmail.com>
+Date:   Mon Jul 31 20:52:20 2023 +0200
+
+    Added tailwindcss to the project
+
+[33mcommit 93471c7c5d2a0511c5bdf5424091f0baa6400101[m
+Author: catvatar <olekgogol@protonmail.com>
+Date:   Fri Jul 28 12:14:55 2023 +0200
+
+    removed .next
+
+[33mcommit 4108de2e4f2dea362691babb8ab8d025cbe40132[m
+Author: catvatar <olekgogol@protonmail.com>
+Date:   Fri Jul 28 12:12:19 2023 +0200
+
+    .
+
+[33mcommit 29f5ba6d3c989a82f88d7998c459dfd354a16c6b[m
+Author: catvatar <olekgogol@protonmail.com>
+Date:   Thu Jul 27 14:51:51 2023 +0200
+
+    Revert "Revert ".""
+    
+    This reverts commit 0a76387bce22bb33707117cea30ce04a6682b2e3.
+
+[33mcommit 0a76387bce22bb33707117cea30ce04a6682b2e3[m
+Author: catvatar <olekgogol@protonmail.com>
+Date:   Thu Jul 27 14:51:38 2023 +0200
+
+    Revert "."
+    
+    This reverts commit 1d4c23d34f90e6c313b5d3893e56f397ef76d33c.
+
+[33mcommit 1d4c23d34f90e6c313b5d3893e56f397ef76d33c[m
+Author: catvatar <olekgogol@protonmail.com>
+Date:   Thu Jul 27 14:51:33 2023 +0200
+
+    .
+
+[33mcommit b6e8593114e4c508622d03696957de44d4c69a24[m
+Author: catvatar <olekgogol@protonmail.com>
+Date:   Thu Jul 27 14:45:40 2023 +0200
+
+    copied gitignore from external resource
+
+[33mcommit 0cf89555d9384aecb0672d71c655032affd6ffb0[m
+Author: catvatar <olekgogol@protonmail.com>
+Date:   Thu Jul 27 14:15:18 2023 +0200
+
+    .
+
+[33mcommit 05fc5b1353a559093c0087d352eea93b607ee3d3[m
+Author: catvatar <olekgogol@protonmail.com>
+Date:   Thu Jul 27 12:31:57 2023 +0200
+
+    merged nextjs tutorial with portfolio
+
+[33mcommit 4534cbb5e05a21de3dcaf5858693fe9e7f907600[m
+Author: catvatar <olekgogol@protonmail.com>
+Date:   Thu Jul 27 12:29:40 2023 +0200
+
+    Added README and updated dependencies
+
+[33mcommit c6a94e7c083d5d8fc0aabbe26f4c872045d516f6[m
+Author: catvatar <olekgogol@protonmail.com>
+Date:   Wed Jul 26 22:21:00 2023 +0200
+
+    added sharp
+
+[33mcommit 94363d3cc1d85b716e7ae57724283c2be71454d2[m
+Author: catvatar <olekgogol@protonmail.com>
+Date:   Wed Jul 26 11:41:44 2023 +0200
+
+    reverted port changes
+
+[33mcommit 147d51737217ae702a01ca5c7754e0ee8d61fde6[m
+Author: catvatar <olekgogol@protonmail.com>
+Date:   Wed Jul 26 11:34:48 2023 +0200
+
+    changed port to 80
+
+[33mcommit 13b5c5b818ad9f0187810149b3d52033237d6c16[m
+Author: catvatar <olekgogol@protonmail.com>
+Date:   Tue Jul 25 23:18:21 2023 +0200
+
+    hope this will work
+
+[33mcommit c649ba5c01d36d0a8102ba55e281d88d89a153c3[m
+Author: catvatar <olekgogol@protonmail.com>
+Date:   Tue Jul 25 23:15:42 2023 +0200
+
+    removed old commits
+
+[33mcommit b7e3690897dd0db56b9855dc2e04bda3d44c0be0[m
+Author: catvatar <olekgogol@protonmail.com>
+Date:   Tue Jul 25 23:10:47 2023 +0200
+
+    removed unused gitignore
+
+[33mcommit b27aec135db7e66ab716c7b12e4ddc5323142196[m
+Author: catvatar <olekgogol@protonmail.com>
+Date:   Tue Jul 25 22:50:14 2023 +0200
+
+    More temporary code while learning
+
+[33mcommit 2e9856ae10fcceff91fb2e2f5b15820aa1be1e8f[m
+Author: catvatar <olekgogol@protonmail.com>
+Date:   Mon Jul 24 21:07:18 2023 +0200
+
+    Added Next app inside the app for tutorials sake
+
+[33mcommit 48ecbc8f2d4c184956116852ff43431369c5c741[m
+Author: catvatar <olekgogol@protonmail.com>
+Date:   Sun Jul 23 11:32:55 2023 +0200
+
+    Migrated from React to Next
+
+[33mcommit 6bc1051b621969b37c4384bb21068386a6d7e6b1[m
+Author: catvatar <olekgogol@protonmail.com>
+Date:   Thu Jul 20 21:34:57 2023 +0200
+
+    testing VM sync
+
+[33mcommit a86a0fed9ed8d36e8d2f8d287eb75ad9fca31a05[m
+Author: catvatar <olekgogol@protonmail.com>
+Date:   Thu Jul 20 21:30:44 2023 +0200
+
+    file for testing git on VM
+
+[33mcommit 53cfbeb0edcc17a4aef5507c60c2b3dd14217593[m
+Author: catvatar <olekgogol@protonmail.com>
+Date:   Thu Jul 20 21:29:35 2023 +0200
+
+    finished learnign git basics
+
+[33mcommit b7ee95e059aff98cd5e880dc619de56286e3e9ef[m
+Author: catvatar <olekgogol@protonmail.com>
+Date:   Thu Jul 20 21:24:54 2023 +0200
+
+    test using vscode
+
+[33mcommit 66ee1ed77c09062aee5acb91f01c2d18ff8fb05b[m
+Author: catvatar <olekgogol@protonmail.com>
+Date:   Thu Jul 20 21:23:39 2023 +0200
+
+    test
