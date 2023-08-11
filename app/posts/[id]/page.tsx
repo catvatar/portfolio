@@ -1,6 +1,6 @@
 import { getAllPostIds, getPostData } from '../../../lib/posts';
 import Head from 'next/head';
-import Layout from '../../../lib/layout'
+import Layout from '../../../ui/layout'
 
 // export async function getStaticProps({ params }) {
 //   const postData = await getPostData(params.id);

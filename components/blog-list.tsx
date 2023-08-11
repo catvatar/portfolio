@@ -1,7 +1,7 @@
 'use client'
 
 import { BlogElement } from "./blog-element";
-import { tagsContext } from "../public/Context";
+import { tagsContext } from "../lib/Context";
 import { useContext } from "react";
 
 export default function BlogList({ posts }){

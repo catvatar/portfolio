@@ -1,7 +1,7 @@
 import { getSortedPostsData } from '../lib/posts';
-import BlogList from '../lib/blog-list';
-import Layout from '../lib/layout';
-import { PostsContextProvider } from '../public/Context';
+import BlogList from '../components/blog-list';
+import Layout from '../ui/layout';
+import { PostsContextProvider } from '../lib/Context';
 
 export default function Home() {
   const allPostsData:any = getSortedPostsData();

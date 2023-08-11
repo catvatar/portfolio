@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { TopNav } from './top-nav';
-import { SideNav } from './side-nav'
+import SideNav from './side-nav';
 
 export function GlobalNav() {
   const [isOpen, setIsOpen] = useState(false);

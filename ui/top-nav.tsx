@@ -2,7 +2,7 @@
 
 import clsx from 'clsx';
 import Link from 'next/link';
-import { isHome } from '../public/Context';
+import { isHome } from '../lib/Context';
 import { useContext } from 'react';
 
 export function TopNav({ stateProp }) {

@@ -1,5 +1,5 @@
-import { GlobalNav } from '../ui/global-nav';
-import { IsHomeProvider } from '../public/Context';
+import { GlobalNav } from './global-nav';
+import { IsHomeProvider } from '../lib/Context';
 
 export default function Layout({
   children,

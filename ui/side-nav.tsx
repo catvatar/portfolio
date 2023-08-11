@@ -1,44 +1,18 @@
+'use client'
+
 import clsx from 'clsx';
 import Image from 'next/image';
-import { getSortedPostsData } from '../lib/posts';
-import { postsContext, tagsContext } from '../public/Context';
-import { useState, useContext } from 'react';
-import { useSearchParams } from 'next/navigation';
+import TagList from '../components/tag-list';
 
-export function SideNav({ stateProp }) {
+export default function SideNav({ stateProp }) {
   const [isOpen, setIsOpen] = stateProp;
-
-  const uniqueTags = (()=>{
-    const postData:any = useContext(postsContext);
-    // const postData:any = getSortedPostsData();
-    return postData?postData.reduce(
-      (acc, tags) => {
-        return [...acc, ...tags.tags.filter(
-          (tag) => {
-            return !acc.includes(tag);
-          }
-        )];
-      },
-      []
-      ):[];
-  })();
-
-  const iTag = useSearchParams()?.get('tag');
-  const inputTag = iTag?iTag:'';
-  const startingArr = uniqueTags.includes(inputTag)?[inputTag]:[];
-
-  const [clickedTags, setClickedTags] = useState<string[]>(startingArr);
-  
-  const [tagsState, setTagsState] = useContext(tagsContext);
-  setTagsState(clickedTags);
 
   return (
     <div className={clsx('fixed top-0 bg-secondary-light border-r-4 border-detail-dark bottom-0 z-auto w-sidebar', {'invisible lg:visible' : !isOpen})}>
       <div
         className={clsx(
           'lg:block',
-          {'fixed inset-x-0 bottom-0 top-14 bg-secondary-light': isOpen,
-          hidden: !isOpen,
+          {'fixed inset-x-0 bottom-0 top-14 bg-secondary-light': isOpen, hidden: !isOpen,
         })}
       >
         <div className='p-8'>
@@ -57,20 +31,7 @@ export function SideNav({ stateProp }) {
             <hr className='border-black my-3' />
           </section>
           <section>
-            <ul className='grid grid-cols-4 lg:grid-cols-3 gap-1'>
-              {uniqueTags.map(
-                (item)=>{
-                  return (
-                    <li className={clsx('col-auto text-black hover:text-white',{'text-debug':clickedTags.includes(item)})} 
-                      key={item} 
-                      onClick={()=>{
-                        clickedTags.includes(item)?setClickedTags(clickedTags.filter((elem)=>elem!==item)):setClickedTags([...clickedTags, item]);
-                      }}>{item}
-                    </li>
-                  )
-                }
-              )}
-            </ul>
+            <TagList />
           </section>
         </div>
       </div>
