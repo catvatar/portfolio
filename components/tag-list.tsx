@@ -34,22 +34,36 @@ export default function TagList(){
   const [tagsState, setTagsState] = useContext(tagsContext);
   useEffect(()=>{setTagsState(clickedTags)},[]);
 
+  const SingleTag = ({ param }) => {
+    return (
+      <div className={clsx('col-auto text-black hover:text-white',{'text-debug':clickedTags.includes(param)})} 
+        onClick={()=>{
+          const newArr = clickedTags.includes(param)?clickedTags.filter((elem)=>elem!==param):[...clickedTags, param];
+          setClickedTags(newArr);
+          setTagsState(newArr);
+        }}>{param}
+      </div>
+    );
+  };
+
   return (
-    <ul className='grid grid-cols-4 lg:grid-cols-3 gap-1'>
-      {uniqueTags.map(
-        (item)=>{
-          return (
-            <li className={clsx('col-auto text-black hover:text-white',{'text-debug':clickedTags.includes(item)})} 
-              key={item} 
-              onClick={()=>{
-                const newArr = clickedTags.includes(item)?clickedTags.filter((elem)=>elem!==item):[...clickedTags, item];
-                setClickedTags(newArr);
-                setTagsState(newArr);
-              }}>{item}
-            </li>
-          )
-        }
-      )}
-    </ul>
+    <>
+      <ul className='grid grid-cols-4 lg:grid-cols-3 gap-1'>
+        {uniqueTags.map(
+          (item)=>{
+            return (<li key={item}>
+              <SingleTag param={item}/>
+            </li>)
+          }
+        )}
+      </ul>
+      <div className={clsx({'hidden':clickedTags.length===0})}>
+      <hr className='border-black my-3' />
+      <h2 className='hover:text-white' onClick={()=>{
+        setClickedTags([]);
+        setTagsState([]);
+      }}>Clear Tags</h2>
+      </div>
+    </>
   );
 }
