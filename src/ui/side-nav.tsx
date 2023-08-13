@@ -16,19 +16,21 @@ export default function SideNav({ stateProp }) {
         })}
       >
         <div className='p-8'>
-          <section>
-            <div className='mx-3 mb-4 border-8 border-secondary-dark'>
+          <section className='grid grid-cols-2'>
+            <div className='mx-3 mb-4 border-4 border-detail-dark '>
               <Image
-                src='/template-gradient.png'
+                src='/profile.png'
                 width={9999}
                 height={0}
                 alt='test'
               />
             </div>
             
-            <h1>O mnie</h1>
-            <p>Jakiś tekst</p>
-            <hr className='border-black my-3' />
+            <div>
+              <h1>O mnie</h1>
+              <p>Jakiś tekst</p>
+            </div>
+            <hr className='border-black mb-3 col-span-full' />
           </section>
           <section>
             <TagList />

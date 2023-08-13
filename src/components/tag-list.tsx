@@ -3,22 +3,24 @@ import { useSearchParams } from "next/navigation";
 import { useState, useContext, useEffect } from "react";
 import { tagsContext, postsContext } from "../lib/Context";
 
-//needs:
-//post tags, 
+function getUniqueTags( posts ){
+  if(!posts){
+    return [];
+  }
+  return posts.reduce(
+    (acc, item) => {
+      if(!item.tags){
+        console.log('error in ',item.id);
+        return acc;
+      }
+      return [...acc, ...item.tags.filter(tag => !acc.includes(tag))];},[]
+  )
+}
+
+// I need a lot of error handling
 export default function TagList(){
-  const uniqueTags = (()=>{
-    const postData:any = useContext(postsContext);
-    return postData?postData.reduce(
-      (acc, tags) => {
-        return [...acc, ...tags.tags.filter(
-          (tag) => {
-            return !acc.includes(tag);
-          }
-        )];
-      },
-      []
-      ):[];
-  })();
+
+  const uniqueTags = getUniqueTags(useContext(postsContext));
 
   const [clickedTags, setClickedTags] = (() => {
     const iTags = useSearchParams()?.get('tags');

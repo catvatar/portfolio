@@ -2,9 +2,8 @@
 
 import { createContext, useState } from 'react';
 
-export const isHome = createContext(false);
-export const postsContext = createContext(null);
-
+export const isHome = createContext<boolean>(false);
+export const postsContext = createContext<any>(null);
 
 export const tagsContext = createContext<any>(null);
 
