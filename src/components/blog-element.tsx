@@ -19,7 +19,7 @@ export function BlogElement({
               width={9999}
               height={0}
               src={img}
-              alt='img'
+              alt={`${id}`}
             />
           </div>
           <div className='border-0'>

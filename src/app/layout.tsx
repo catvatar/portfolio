@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import '../styles/global.css';
 import { TagsContextProvider } from '../lib/Context';
 
+
 export const metadata: Metadata = {
   title: 'Aleksander Gogol Portfolio',
   description: 'Portfolio Aleksander Gogol',
