@@ -21,7 +21,7 @@ export default async function Post({ params }) {
   const postData:any = await getPostData(params.id);
 
   return (
-    <Layout>
+    <>
       <Head>
         <title>{postData.title}</title>
       </Head>
@@ -29,7 +29,7 @@ export default async function Post({ params }) {
         <h1 className='flex justify-center'>{postData.title}</h1>
         <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
       </article>
-    </Layout>
+    </>
   );
 }
 

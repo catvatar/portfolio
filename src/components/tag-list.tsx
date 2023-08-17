@@ -1,3 +1,5 @@
+'use client'
+
 import clsx from "clsx";
 import { useSearchParams } from "next/navigation";
 import { useState, useContext, useEffect } from "react";
@@ -17,9 +19,7 @@ function getUniqueTags( posts ){
   )
 }
 
-// I need a lot of error handling
 export default function TagList(){
-
   const uniqueTags = getUniqueTags(useContext(postsContext));
 
   const [clickedTags, setClickedTags] = (() => {

@@ -1,16 +1,15 @@
-'use client';
-
-import { useState } from 'react';
-import { TopNav } from './top-nav';
+import TopNav from './top-nav';
 import SideNav from './side-nav';
+import { OpenContextProvider, PostsContextProvider } from '../lib/Context';
+import { getSortedPostsData } from '../lib/posts';
 
 export function GlobalNav() {
-  const [isOpen, setIsOpen] = useState(false);
-
   return (
-    <>
-        <SideNav stateProp={ [isOpen, setIsOpen] }/>
-        <TopNav stateProp={ [isOpen, setIsOpen] }/>
-    </>
+    <OpenContextProvider>
+        <PostsContextProvider value={getSortedPostsData()}>
+          <SideNav />
+        </PostsContextProvider>
+        <TopNav />
+    </OpenContextProvider>
   );
 }

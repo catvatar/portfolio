@@ -1,5 +1,6 @@
-import { Metadata } from 'next';
 import '../styles/global.css';
+import { Metadata } from 'next';
+import { GlobalNav } from '../ui/global-nav';
 import { TagsContextProvider } from '../lib/Context';
 
 
@@ -18,7 +19,21 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body><TagsContextProvider>{children}</TagsContextProvider></body>
+      <body>
+        <TagsContextProvider>
+          <div className='bg-primary'>
+            <GlobalNav />
+            <div className='lg:ml-sidebar py-6'>
+              <div className='flex justify-center'>
+                <div className='w-5/6'>
+                  {children}
+                </div>
+              </div>
+              <div className="w-full h-screen bg-primary"></div>
+            </div>
+          </div>
+        </TagsContextProvider>
+      </body>
     </html>
   )
 }

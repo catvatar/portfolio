@@ -7,6 +7,21 @@ import html from 'remark-html';
 
 const postsDirectory = path.join(process.cwd(), 'src/posts');
 
+function validatePosts( posts ) : Post[]{
+  if(!posts){
+    throw 'Failed to load posts';
+  }
+  const requiredProperties = ['id','title','tags','img','date'];
+
+  return posts.filter(post => {
+    if(requiredProperties.every(property => property in post)){
+      return true;
+    }
+    console.error('Missing property on post: ', post.id,);
+    return false;
+  });
+}
+
 export function getSortedPostsData():unknown {
   const fileNames = fs.readdirSync(postsDirectory);
   const allPostsData = fileNames.map((fileName) => {
@@ -22,13 +37,13 @@ export function getSortedPostsData():unknown {
     }
   });
 
-  return allPostsData.sort((a:any, b:any) => {
+  return validatePosts(allPostsData.sort((a:any, b:any) => {
     if (a.date < b.date) {
       return 1;
     } else {
       return -1;
     }
-  });
+  }));
 }
 
 export function getAllPostIds() {

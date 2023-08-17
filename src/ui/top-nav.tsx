@@ -2,11 +2,12 @@
 
 import clsx from 'clsx';
 import Link from 'next/link';
-import { isHome } from '../lib/Context';
+import { useSelectedLayoutSegment } from 'next/navigation';
 import { useContext } from 'react';
+import { openContext } from '../lib/Context';
 
-export function TopNav({ stateProp }) {
-  const [isOpen, setIsOpen] = stateProp;
+export default function TopNav() {
+  const [isOpen, setIsOpen] = useContext(openContext);
 
   return (
     <nav className={clsx('bg-secondary-dark border-b-detail-dark border-b-4','w-full h-14 top-0 lg:sticky lg:ml-sidebar', {'fixed' : isOpen})}>
@@ -14,7 +15,7 @@ export function TopNav({ stateProp }) {
         <div className='judtify-self-start'>
           Aleksander Gogol
         </div>
-        <div className={clsx('judtify-self-start', {'hidden' : useContext(isHome)})}>
+        <div className={clsx('judtify-self-start', {'hidden' : useSelectedLayoutSegment() === null})}>
           <Link
             href="/"
           >
