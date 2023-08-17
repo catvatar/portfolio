@@ -6,6 +6,7 @@ import SideNav from './side-nav';
 
 export function GlobalNav() {
   const [isOpen, setIsOpen] = useState(false);
+
   return (
     <>
         <SideNav stateProp={ [isOpen, setIsOpen] }/>

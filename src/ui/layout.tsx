@@ -8,7 +8,6 @@ export default function Layout({
   children: React.ReactNode;
   home?: boolean;
 }) {
-
   return (
     <div className='bg-primary'>
       <IsHomeProvider value={home}>
