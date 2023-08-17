@@ -3,7 +3,7 @@
 import clsx from "clsx";
 import { useSearchParams } from "next/navigation";
 import { useState, useContext, useEffect } from "react";
-import { tagsContext, postsContext } from "../lib/Context";
+import { tagsContext } from "../lib/Context";
 
 function getUniqueTags( posts ){
   if(!posts){
@@ -19,8 +19,8 @@ function getUniqueTags( posts ){
   )
 }
 
-export default function TagList(){
-  const uniqueTags = getUniqueTags(useContext(postsContext));
+export default function TagList({ posts }){
+  const uniqueTags = getUniqueTags(posts);
 
   const [clickedTags, setClickedTags] = (() => {
     const iTags = useSearchParams()?.get('tags');

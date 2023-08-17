@@ -1,12 +1,11 @@
 'use client'
 
 import { BlogElement } from "./blog-element";
-import { postsContext, tagsContext } from "../lib/Context";
+import { tagsContext } from "../lib/Context";
 import { useContext } from "react";
 
-export default function BlogList(){
+export default function BlogList({ posts }){
   const [tagsState, setTagsState] = useContext(tagsContext);
-  const posts = useContext(postsContext);
 
   if(!posts || !tagsState){
     return(<></>);
@@ -18,11 +17,14 @@ export default function BlogList(){
     return <h2>To Many Tags!</h2>;
   }
 
-  return filteredPosts.map((post) => {
-    return (<li key={post.id}>
-      <BlogElement {...post} />
-      <br />
-    </li>);
-  });
-  
+  return (
+    <ul>
+      {filteredPosts.map((post) => {
+        return (<li key={post.id}>
+          <BlogElement {...post} />
+          <br />
+        </li>);
+      })}
+    </ul>
+  );
 }
