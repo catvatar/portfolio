@@ -1,10 +1,10 @@
 import { getSortedPostsData } from '../lib/posts';
-import BlogList from '../components/blog-list';
+import BlogsList from '../components/blogs-list';
 
 export default function Home() {
   return (
     <section>
-      <BlogList posts = {getSortedPostsData()}/>
+      <BlogsList posts = {getSortedPostsData()}/>
     </section>
   );
 }

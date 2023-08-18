@@ -1,10 +1,11 @@
 'use client'
 import clsx from 'clsx';
-import TagList from '../components/tag-list';
+import TagsList from '../components/tags-list';
+import AboutMeElement from '../components/about-me-element';
 import { useContext } from 'react';
 import { openContext } from '../lib/Context';
-import AboutMeElement from '../components/about-me-element';
 import { useSelectedLayoutSegment } from 'next/navigation';
+import { getUniqueTags } from '../lib/tags';
 
 export default function SideNav({ posts }) {
   const [isOpen, setIsOpen] = useContext(openContext);
@@ -24,7 +25,7 @@ export default function SideNav({ posts }) {
           <AboutMeElement />
         </section>
         <section className={clsx({'hidden' : useSelectedLayoutSegment() !== null})}>
-          <TagList posts={posts} />
+          <TagsList tags={getUniqueTags(posts)} />
         </section>
       </div>
     </div>

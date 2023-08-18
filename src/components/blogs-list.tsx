@@ -4,7 +4,7 @@ import { BlogElement } from "./blog-element";
 import { tagsContext } from "../lib/Context";
 import { useContext } from "react";
 
-export default function BlogList({ posts }){
+export default function BlogsList({ posts }){
   const [tagsState, setTagsState] = useContext(tagsContext);
 
   if(!posts || !tagsState){

@@ -2,7 +2,7 @@ import '../styles/global.css';
 import { Metadata } from 'next';
 import { GlobalNav } from '../ui/global-nav';
 import { TagsContextProvider } from '../lib/Context';
-
+import { getSortedPostsData } from '../lib/posts';
 
 export const metadata: Metadata = {
   title: 'Aleksander Gogol Portfolio',
@@ -12,15 +12,12 @@ export const metadata: Metadata = {
   authors: [{ name: 'Aleksander Gogol' }],
 }
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }:{ children: React.ReactNode }) {
+
   return (
     <html lang="en">
       <body>
-        <TagsContextProvider>
+        <TagsContextProvider allPostsData={getSortedPostsData()}>
           <div className='bg-primary'>
             <GlobalNav />
             <div className='lg:ml-sidebar py-6'>
