@@ -6,6 +6,7 @@ import { useContext } from 'react';
 import { openContext } from '../lib/Context';
 import { useSelectedLayoutSegment } from 'next/navigation';
 import { getUniqueTags } from '../lib/tags';
+import BlogfolioSwitchElement from '../components/blogfolio-switch-element';
 
 export default function SideNav({ posts }) {
   const [isOpen, setIsOpen] = useContext(openContext);
@@ -26,6 +27,9 @@ export default function SideNav({ posts }) {
         </section>
         <section className={clsx({'hidden' : useSelectedLayoutSegment() !== null})}>
           <TagsList tags={getUniqueTags(posts)} />
+        </section>
+        <section className='absolute bottom-4 left-0 px-8 w-full'>
+          <BlogfolioSwitchElement />
         </section>
       </div>
     </div>

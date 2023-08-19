@@ -4,6 +4,8 @@ import clsx from "clsx";
 import { useContext } from "react";
 import { tagsContext } from "../lib/Context";
 import TagElement from "./tag-element";
+import { includedTagsFirst } from "../lib/tags";
+import Break from "./break";
 
 export default function TagList({ tags }){
 
@@ -12,7 +14,7 @@ export default function TagList({ tags }){
   return (
     <>
       <ul className='grid grid-cols-4 lg:grid-cols-3 gap-1'>
-        {tags.map(
+        {includedTagsFirst( tags, tagsState ).map(
           (item)=>{
             return (
               <TagElement key={item} tag={item} />
@@ -21,10 +23,8 @@ export default function TagList({ tags }){
         )}
       </ul>
       <div className={clsx({'hidden':tagsState.length===0})}>
-      <hr className='border-black my-3' />
-      <h2 className='hover:text-white' onClick={()=>{
-        setTagsState([]);
-      }}>Clear Tags</h2>
+      <Break />
+      <h2 className='hover:text-white' onClick={()=>{setTagsState([]);}}>Clear Tags</h2>
       </div>
     </>
   );
