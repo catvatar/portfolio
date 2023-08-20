@@ -9,6 +9,7 @@ export default function BlogfolioSwitchElement(){
     <Break />
     <Link
       href={onPortfolio?'/':'/blog'}
+      prefetch={true}
     >
       {onPortfolio?'Portfolio':'Blog'}
     </Link>

@@ -16,15 +16,16 @@ export default function RootLayout({ children }:{ children: React.ReactNode }) {
       <body>
         <TagsContextProvider allPostsData={allPostsData}>
           <div className='bg-primary'>
-            <GlobalNav />
-            <div className='lg:ml-sidebar py-6'>
-              <div className='flex justify-center'>
-                <div className='w-5/6'>
-                  {children}
+            <GlobalNav>
+              <div className='py-6'>
+                <div className='flex justify-center'>
+                  <div className='w-5/6'>
+                    {children}
+                  </div>
                 </div>
+                <div className="w-full h-screen bg-primary"></div>
               </div>
-              <div className="w-full h-screen bg-primary"></div>
-            </div>
+            </GlobalNav>
           </div>
         </TagsContextProvider>
       </body>
