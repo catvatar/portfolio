@@ -1,8 +1,8 @@
 ---
-title: 'Two Forms of Pre-rendering'
-tags: ['Next.js', 'React', 'IT', 'Template']
+title: '!P Two'
+tags: ['KIKI']
 img: '/Thumbnails/Thumbnail_1.png'
-date: '2020-01-01'
+date: '2020-01-29'
 ---
 
 Next.js has two forms of pre-rendering: **Static Generation** and **Server-side Rendering**. The difference is in **when** it generates the HTML for a page.

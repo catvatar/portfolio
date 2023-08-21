@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import { GlobalNav } from '../../ui/global-nav';
+import { GlobalNavigation } from '../../ui/global-navigation';
 import { TagsContextProvider } from '../../lib/Context';
 import { getSortedPostsData } from '../../lib/posts';
 
@@ -8,15 +8,15 @@ export const metadata: Metadata = {
   description: 'Portfolio Aleksander Gogol',
 }
 
-export default function RootLayout({ children }:{ children: React.ReactNode }) {
-  const allPostsData = getSortedPostsData();
+export default function BlogLayout({ children }:{ children: React.ReactNode }) {
+  const allPostsData = getSortedPostsData('portfolio');
 
   return (
     <html lang="en">
       <body>
         <TagsContextProvider allPostsData={allPostsData}>
           <div className='bg-primary'>
-            <GlobalNav>
+            <GlobalNavigation>
               <div className='py-6'>
                 <div className='flex justify-center'>
                   <div className='w-5/6'>
@@ -25,7 +25,7 @@ export default function RootLayout({ children }:{ children: React.ReactNode }) {
                 </div>
                 <div className="w-full h-screen bg-primary"></div>
               </div>
-            </GlobalNav>
+            </GlobalNavigation>
           </div>
         </TagsContextProvider>
       </body>

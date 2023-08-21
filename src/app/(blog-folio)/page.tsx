@@ -4,7 +4,7 @@ import BlogsList from '../../components/blogs-list';
 export default function Portfolio() {
   return (
     <section>
-      <BlogsList posts = {getSortedPostsData()}/>
+      <BlogsList posts = {getSortedPostsData('portfolio')}/>
     </section>
   );
 }

@@ -1,5 +1,5 @@
 ---
-title: 'When to Use Static Generation v.s. Server-side Rendering'
+title: '!P When to Use Static Generation v.s. Server-side Rendering'
 tags: ['Next.js', 'React', 'IT', 'Template', 'just', 'some' , 'trash', 'to', 'overflow', 'the', 'element']
 img: '/Thumbnails/Thumbnail_2.png'
 date: '2020-01-02'

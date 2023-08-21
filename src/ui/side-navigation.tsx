@@ -8,7 +8,7 @@ import { useSelectedLayoutSegment } from 'next/navigation';
 import { getUniqueTags } from '../lib/tags';
 import BlogfolioSwitchElement from '../components/blogfolio-switch-element';
 
-export default function SideNav({ posts }) {
+export default function SideNavigation({ posts }) {
   const [isOpen, setIsOpen] = useContext(openContext);
 
   return (

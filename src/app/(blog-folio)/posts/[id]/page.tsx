@@ -1,24 +1,15 @@
+import ArticleElement from '../../../../components/article-element';
 import { getAllPostIds, getPostData } from '../../../../lib/posts';
-import Head from 'next/head';
 
 export async function generateStaticParams() {
-  const paths = getAllPostIds();
+  const paths = getAllPostIds('portfolio');
   return paths;
 }
 
 export default async function Post({ params }) {
-  const postData:any = await getPostData(params.id);
-
+  const postData:any = await getPostData(params.id, 'portfolio');
   return (
-    <>
-      <Head>
-        <title>{postData.title}</title>
-      </Head>
-      <article className='prose lg:prose-xl max-w-none prose-img:h-52'>
-        <h1 className='flex justify-center'>{postData.title}</h1>
-        <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
-      </article>
-    </>
+    <ArticleElement postData={postData} />
   );
 }
 

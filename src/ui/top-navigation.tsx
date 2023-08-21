@@ -6,7 +6,7 @@ import { useSelectedLayoutSegments } from 'next/navigation';
 import { useContext } from 'react';
 import { openContext } from '../lib/Context';
 
-export default function TopNav() {
+export default function TopNavigation() {
   const [isOpen, setIsOpen] = useContext(openContext);
   const selectedLayoutSegments = useSelectedLayoutSegments();
   
