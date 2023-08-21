@@ -6,8 +6,10 @@ import { tagsContext } from "../lib/Context";
 import TagElement from "./tag-element";
 import { includedTagsFirst } from "../lib/tags";
 import Break from "./break";
+import { useSelectedLayoutSegments } from "next/navigation";
 
-export default function TagList({ tags }){
+export default function TagsList({ portfolioTags, blogTags }){
+  const tags = useSelectedLayoutSegments().includes('blog')?blogTags:portfolioTags;
 
   const [tagsState, setTagsState] = useContext(tagsContext);
 

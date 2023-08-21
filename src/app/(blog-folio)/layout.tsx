@@ -15,18 +15,15 @@ export default function BlogLayout({ children }:{ children: React.ReactNode }) {
     <html lang="en">
       <body>
         <TagsContextProvider allPostsData={allPostsData}>
-          <div className='bg-primary'>
-            <GlobalNavigation>
-              <div className='py-6'>
-                <div className='flex justify-center'>
-                  <div className='w-5/6'>
-                    {children}
-                  </div>
+          <GlobalNavigation>
+            <div className='py-6'>
+              <div className='flex justify-center'>
+                <div className='w-5/6'>
+                  {children}
                 </div>
-                <div className="w-full h-screen bg-primary"></div>
               </div>
-            </GlobalNavigation>
-          </div>
+            </div>
+          </GlobalNavigation>
         </TagsContextProvider>
       </body>
     </html>
