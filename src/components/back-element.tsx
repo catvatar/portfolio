@@ -6,8 +6,11 @@ import { useSelectedLayoutSegments } from "next/navigation"
 
 export default function BackElement(){
   const selectedLayoutSegments = useSelectedLayoutSegments();
-  return(<div className={clsx('judtify-self-start', {'hidden' : selectedLayoutSegments.length === 0})}>
-  <Link href="/">
+  const isBlog = selectedLayoutSegments.includes('blog');
+  const onPost = selectedLayoutSegments.includes('posts');
+
+  return(<div className={clsx('judtify-self-start', {'hidden' : !onPost})}>
+  <Link href={isBlog?'/blog':'/'}>
     <div className="hover:text-gray-400">
       Back
     </div>

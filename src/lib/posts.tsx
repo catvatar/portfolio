@@ -24,7 +24,7 @@ function validatePosts( posts ) : Post[]{
   });
 }
 
-export function getSortedPostsData( subfolder ):unknown {
+export function getSortedPostsData( subfolder ):any {
   const postsDirectory = path.join(rootDirectory, subfolder);
   const fileNames = fs.readdirSync(postsDirectory);
   const allPostsData = fileNames.map((fileName) => {

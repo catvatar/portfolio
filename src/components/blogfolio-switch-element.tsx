@@ -4,16 +4,22 @@ import { useSelectedLayoutSegments } from "next/navigation";
 import Break from "./break";
 import Link from "next/link";
 
-export default function BlogfolioSwitchElement(){
-  const onPortfolio = useSelectedLayoutSegments().includes('blog');
+function generateURL( selectedLayoutSegments ){
+  const targetSelectedLayoutSegments = selectedLayoutSegments.includes('blog')?selectedLayoutSegments.filter(item=>item!='blog'):['blog', ...selectedLayoutSegments];
+  return targetSelectedLayoutSegments.reduce((URL, item) => {return URL + `${item}/`},'/');
+}
+
+export default function BlogfolioSwitchElement({ availableRouts }){
+  const selectedLayoutSegments = useSelectedLayoutSegments();
+  const isBlog = selectedLayoutSegments.includes('blog');
   return(
   <div>
     <Break />
     <Link
-      href={onPortfolio?'/':'/blog'}
+      href={(isBlog?availableRouts.portfolio:availableRouts.blog).includes(selectedLayoutSegments.at(-1))?generateURL(selectedLayoutSegments):(isBlog?'/':'/blog')}
       prefetch={true}
     >
-      {onPortfolio?'Portfolio':'Blog'}
+      {isBlog?'Portfolio':'Blog'}
     </Link>
   </div>)
 }

@@ -6,8 +6,9 @@ import SideNavigationigationWrapper from '../components/side-navigation-wrapper'
 import { getSortedPostsData } from '../lib/posts';
 
 export default function SideNavigation() {
-  const uniquePortfolioTags = getUniqueTags(getSortedPostsData('portfolio'));
-  const uniqueBlogTags = getUniqueTags(getSortedPostsData('blog'));
+  const postsObjects = {portfolio : getSortedPostsData('portfolio'), blog : getSortedPostsData('blog')};
+  const uniqueTagsObjects = {portfolio : getUniqueTags(postsObjects.portfolio), blog : getUniqueTags(postsObjects.blog)};
+  const availableRouts = {portfolio : postsObjects.portfolio.map(item => item.id), blog : postsObjects.blog.map(item => item.id)};
   return (
     <SideNavigationigationWrapper>
       <div className='p-8'>
@@ -15,10 +16,10 @@ export default function SideNavigation() {
           <AboutMeElement />
         </section>
         <section>
-          <TagsList portfolioTags={uniquePortfolioTags} blogTags={uniqueBlogTags} />
+          <TagsList portfolioTags={uniqueTagsObjects.portfolio} blogTags={uniqueTagsObjects.blog} />
         </section>
         <section className='absolute bottom-8 left-0 px-8 w-full'>
-          <BlogfolioSwitchElement />
+          <BlogfolioSwitchElement availableRouts={availableRouts} />
         </section>
       </div>
     </SideNavigationigationWrapper>
