@@ -31,7 +31,8 @@ export default {
         'debug': '#ff0000'
       },
       spacing: {
-        'sidebar': '18rem',
+        'sidebar-small': '16rem',
+        'sidebar-large': '24rem',
       },
       typography: {
         DEFAULT: {

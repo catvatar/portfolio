@@ -9,9 +9,9 @@ export default function SideNavigationigationWrapper({ children }){
   return(<div className={clsx(
     //by default isOpen if false
     'fixed top-0 bg-secondary-light border-r-4 border-detail-dark bottom-0 z-auto', 
-    'lg:block lg:w-sidebar',
+    'md:block md:w-sidebar-small',
     {
-      'invisible lg:visible' : !isOpen,
+      'invisible md:visible' : !isOpen,
       'fixed inset-x-0 bottom-0 top-14 bg-secondary-light' : isOpen, 
     },
   )}>

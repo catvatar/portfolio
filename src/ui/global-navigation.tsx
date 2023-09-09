@@ -7,11 +7,11 @@ export function GlobalNavigation({ children }:{ children: React.ReactNode }) {
     <>
       <OpenContextProvider>
           <SideNavigation />
-          <div className='lg:ml-sidebar'>
+          <div className='md:ml-sidebar-small'>
             <TopNavigation />
           </div>
       </OpenContextProvider>
-      <div className='lg:ml-sidebar'>
+      <div className='md:ml-sidebar-small'>
         {children}
       </div>
     </>

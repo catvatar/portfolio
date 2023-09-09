@@ -15,7 +15,7 @@ export default function BlogLayout({ children }:{ children: React.ReactNode }) {
     <section>
       <TagsContextProvider allPostsData={allPostsData}>
         <GlobalNavigation>
-          <div className='py-6'>
+          <div className='my-6'>
             <div className='flex justify-center'>
               <div className='w-5/6'>
                 {children}

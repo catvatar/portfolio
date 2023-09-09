@@ -16,7 +16,7 @@ export default function TagsList({ portfolioTags, blogTags }){
 
   return (
     <div className={clsx({'hidden':show})}>
-      <ul className='grid grid-cols-4 lg:grid-cols-3 gap-1'>
+      <ul className='grid grid-cols-4 md:grid-cols-3 gap-1'>
         {includedTagsFirst( tags, tagsState ).map(
           (item)=>{
             return (

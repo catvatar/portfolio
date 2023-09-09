@@ -7,7 +7,7 @@ import { openContext } from "../lib/Context";
 export default function TopNavigationWrapper({ children }){
   const [isOpen, setIsOpen] = useContext(openContext);
   return (<nav className={clsx(
-    'bg-secondary-dark border-b-detail-dark border-b-4 w-auto h-14 top-0 lg:sticky', 
+    'bg-secondary-dark border-b-detail-dark border-b-4 w-auto h-14 top-0 md:sticky', 
     {'fixed w-full' : isOpen})}
   >
     <div className='grid grid-flow-col justify-stretch content-center h-full px-4'>
@@ -15,7 +15,7 @@ export default function TopNavigationWrapper({ children }){
       <div className='flex justify-end'>
         <button
           type="button"
-          className="group lg:hidden"
+          className="group md:hidden"
           onClick={() => setIsOpen(!isOpen)}
         >
           <div className="group-hover:text-gray-400">
