@@ -14,7 +14,6 @@ export default function BlogfolioSwitchElement({ availableRouts }){
   const isBlog = selectedLayoutSegments.includes('blog');
   return(
   <div>
-    <Break />
     <Link
       href={(isBlog?availableRouts.portfolio:availableRouts.blog).includes(selectedLayoutSegments.at(-1))?generateURL(selectedLayoutSegments):(isBlog?'/':'/blog')}
       prefetch={true}

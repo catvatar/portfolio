@@ -21,8 +21,8 @@ export function BlogElement({
     const router = useRouter();
 
   return (<>
-      <section className='border-4 border-r-0 border-b-0 border-detail-dark md:h-64'>
-        <div className='border-0 border-b-4 border-detail-dark md:h-2/3 flex'>
+      <section className='group border-4 border-r-0 border-b-0 border-detail-dark md:h-80 xl:h-96'>
+        <div className='border-0 border-b-4 border-detail-dark md:h-3/4 flex'>
           <Image
             src={img}
             alt={`${id}`}
@@ -35,13 +35,13 @@ export function BlogElement({
             height={9}
             className='border-0 border-r-4 border-detail-dark object-scale-down'
             onClick={() => {router.push(`${subfolder==='blog'?'blog/':''}posts/${id}`)}}
-            />
-          <div className='border-0 invisible sm:visible grow'>
-            <ul className='grid grid-cols-1 gap-2 h-32 overflow-hidden md:grid-cols-3'>
+          />
+          <div className='border-0 invisible ml-2 mt-2 md:visible'>
+            <ul className='grid grid-cols-3 content-start gap-2 overflow-hidden'>
               {includedTagsFirst( tags, tagsState ).map(
-                (item)=>{
+                (item, index)=>{
                   return (
-                    <TagElement key={item} tag={item} />
+                    <TagElement key={item} tag={item} parity={index%2} />
                   )
                 }
               )}

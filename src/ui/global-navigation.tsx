@@ -7,11 +7,12 @@ export function GlobalNavigation({ children }:{ children: React.ReactNode }) {
     <>
       <OpenContextProvider>
           <SideNavigation />
-          <div className='md:ml-sidebar-small'>
+          {/* small screen transparent? */}
+          <div className='sticky top-0 lg:ml-sidebar-small xl:ml-sidebar-large'>
             <TopNavigation />
           </div>
       </OpenContextProvider>
-      <div className='md:ml-sidebar-small'>
+      <div className='lg:ml-sidebar-small xl:ml-sidebar-large'>
         {children}
       </div>
     </>
