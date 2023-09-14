@@ -1,17 +1,17 @@
-import colors from 'tailwindcss/colors';
-import { Config } from 'tailwindcss';
+import colors from "tailwindcss/colors";
+import { Config } from "tailwindcss";
 
 export default {
   content: [
-    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/ui/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/ui/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   future: {
     hoverOnlyWhenSupported: true,
   },
-  darkMode: 'class',
+  darkMode: "class",
   theme: {
     extend: {
       colors: {
@@ -22,26 +22,24 @@ export default {
         // 'detail-dark': '#1b4965'
 
         //Green
-        'primary': '#DAD7CD',
-        'secondary-light': '#A3B18A',
-        'secondary-dark': '#588157',
-        'detail-light': '#3A5A40',
-        'detail-dark': '#344E41',
+        primary: "#DAD7CD",
+        "secondary-light": "#A3B18A",
+        "secondary-dark": "#588157",
+        "detail-light": "#3A5A40",
+        "detail-dark": "#344E41",
 
-        'debug': '#ff0000'
+        debug: "#ff0000",
       },
       spacing: {
-        'sidebar-small': '16rem',
-        'sidebar-large': '24rem',
+        "sidebar-small": "16rem",
+        "sidebar-large": "24rem",
       },
       typography: {
         DEFAULT: {
-          css:{
-            
-          }
-        }
-      }
+          css: {},
+        },
+      },
     },
   },
-  plugins: [require('@tailwindcss/typography'), require('@tailwindcss/forms')],
+  plugins: [require("@tailwindcss/typography"), require("@tailwindcss/forms")],
 } satisfies Config;

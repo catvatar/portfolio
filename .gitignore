@@ -130,7 +130,11 @@ dist
 # OS
 *.DS_STORE
 .DS_STORE
+
 # graphql-ppx
 graphql_schema.json
 .graphql_cache
 .graphql_ppx_cache
+
+# 
+.swc
