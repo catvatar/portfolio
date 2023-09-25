@@ -6,6 +6,9 @@ import SideNavigationigationWrapper from "../components/side-navigation-wrapper"
 import { getSortedPostsData } from "../lib/posts";
 import Break from "../components/break";
 
+// Dodaj coc jak otwarty jest artykul
+//pixel w menu na telefonie
+
 export default function SideNavigation() {
   const postsObjects = {
     portfolio: getSortedPostsData("portfolio"),
