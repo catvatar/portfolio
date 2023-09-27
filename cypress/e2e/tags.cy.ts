@@ -6,6 +6,15 @@ describe("Tags", () => {
     cy.get("#tags-list > li").last().click();
     cy.contains("Clear Tags").should("be.visible");
   });
+  it("clears tags on clear tag", () => {
+    cy.viewport(1280, 950);
+    cy.visit("/");
+    cy.contains("Clear Tags").should("not.be.visible");
+    cy.get("#tags-list > li").last().click();
+    cy.contains("Clear Tags").should("be.visible");
+    cy.contains("Clear Tags").click();
+    cy.contains("Clear Tags").should("not.be.visible");
+  });
   it("pulls clicked tag to the top", () => {
     cy.viewport(1280, 950);
     cy.visit("/");
