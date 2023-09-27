@@ -33,6 +33,11 @@ describe("Tags", () => {
         });
     });
   });
+  it("click tags from posts", () => {
+    cy.viewport(1280, 950);
+    cy.visit("/");
+    cy.get("#blog-element").last().find("li").first().click();
+  });
   it("click tags from url", () => {
     cy.viewport(1280, 950);
     cy.visit("/");
