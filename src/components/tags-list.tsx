@@ -18,7 +18,7 @@ export default function TagsList({ portfolioTags, blogTags }) {
 
   return (
     <div className={clsx({ hidden: show })}>
-      <ul className="grid grid-cols-3 gap-1">
+      <ul className="grid grid-cols-3 gap-1" id="tags-list">
         {includedTagsFirst(tags, tagsState).map((item, index) => {
           return <TagElement key={item} tag={item} parity={index % 2} />;
         })}

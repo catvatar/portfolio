@@ -10,7 +10,10 @@ export default function BackElement() {
   const onPost = selectedLayoutSegments.includes("posts");
 
   return (
-    <div className={clsx("judtify-self-start", { hidden: !onPost })}>
+    <div
+      className={clsx("judtify-self-start", { hidden: !onPost })}
+      id="back-element"
+    >
       <Link href={isBlog ? "/blog" : "/"}>
         <div className="hover:text-gray-400">Back</div>
       </Link>

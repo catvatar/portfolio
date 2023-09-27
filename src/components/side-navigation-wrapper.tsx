@@ -8,6 +8,7 @@ export default function SideNavigationigationWrapper({ children }) {
   const [isOpen, setIsOpen] = useContext(openContext);
   return (
     <div
+      id="side-navigation"
       className={clsx(
         //by default isOpen is false
         "fixed bottom-0 top-0 z-auto border-r-0 border-detail-dark bg-secondary-light",

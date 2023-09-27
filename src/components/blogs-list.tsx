@@ -20,7 +20,7 @@ export default function BlogsList({ posts }) {
   }
 
   return (
-    <ul>
+    <ul id="blogs-list">
       {filteredPosts.map((post) => {
         return (
           <li key={post.id}>

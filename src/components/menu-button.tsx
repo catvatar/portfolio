@@ -7,6 +7,7 @@ export default function MenuButton() {
   return (
     <button
       type="button"
+      id="menu"
       className="group lg:hidden"
       onClick={() => setIsOpen(!isOpen)}
     >
