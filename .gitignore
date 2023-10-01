@@ -145,3 +145,6 @@ cypress/e2e/2-advanced-examples
 
 # cypress config
 cypress.config.ts
+
+# cypress screenshots
+cypress/screenshots
