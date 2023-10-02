@@ -12,40 +12,46 @@ function validatePosts(posts): Post[] {
   if (!posts) {
     throw "Failed to load posts";
   }
-  const requiredProperties = [
-    "id",
-    "title",
-    "tags",
-    "img",
-    "date",
-    "subfolder",
-  ];
+  const requiredProperties = ["id", "title", "img", "date", "type"];
 
   return posts.filter((post) => {
-    if (requiredProperties.every((property) => property in post)) {
+    if (
+      requiredProperties.every((property) => {
+        const ret = property in post;
+        if (!ret) {
+          console.log("Missing ", property, " on ", post.id);
+        }
+        return ret;
+      })
+    ) {
       return true;
     }
-    console.error("Missing property on post: ", post.id);
     return false;
   });
 }
 
-export function getSortedPostsData(subfolder): any {
-  const postsDirectory = path.join(rootDirectory, subfolder);
-  const fileNames = fs.readdirSync(postsDirectory);
-  const allPostsData = fileNames.map((fileName) => {
-    const id = fileName.replace(/\.md$/, "");
+export function getSortedPostsData(): any {
+  const postsDirContents = fs.readdirSync(rootDirectory, { recursive: true });
+  const fileNames: any = postsDirContents.filter((dir) => {
+    return dir.includes(".md");
+  });
+  const allPostsData = fileNames.map((dir) => {
+    const idSplit = dir.replace(/\.md$/, "").split("\\");
 
-    const fullPath = path.join(postsDirectory, fileName);
+    const id = idSplit[idSplit.length - 1];
+    const type = idSplit[0];
+
+    const fullPath = path.join(rootDirectory, dir);
     const fileContents = fs.readFileSync(fullPath, "utf8");
     const matterResult = matter(fileContents);
 
     return {
       id,
       ...matterResult.data,
-      subfolder,
+      type,
     };
   });
+
   return validatePosts(
     allPostsData.sort((a: any, b: any) => {
       if (a.date < b.date) {
@@ -57,16 +63,23 @@ export function getSortedPostsData(subfolder): any {
   );
 }
 
-export function getAllPostIds(subfolder) {
-  const postsDirectory = path.join(rootDirectory, subfolder);
-  const fileNames = fs.readdirSync(postsDirectory);
-  return fileNames.map((fileName) => {
-    return { id: fileName.replace(/\.md$/, "") };
+export function getAllPostIds() {
+  const postsDirContents = fs.readdirSync(rootDirectory, { recursive: true });
+  const fileNames: any = postsDirContents.filter((dir) => {
+    return dir.includes(".md");
+  });
+
+  return fileNames.map((dir) => {
+    const idSplit = dir.replace(/\.md$/, "").split("\\");
+
+    const id = idSplit[idSplit.length - 1];
+    const type = idSplit.length == 2 ? idSplit[0] : "";
+    return { ...id, ...type };
   });
 }
 
-export async function getPostData(id, subfolder) {
-  const postsDirectory = path.join(rootDirectory, subfolder);
+export async function getPostData(id, type) {
+  const postsDirectory = path.join(rootDirectory, type);
   const fullPath = path.join(postsDirectory, `${id}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
 

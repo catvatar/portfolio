@@ -13,7 +13,7 @@ export default function BlogLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const allPostsData = getSortedPostsData("portfolio");
+  const allPostsData = getSortedPostsData();
 
   return (
     <section>

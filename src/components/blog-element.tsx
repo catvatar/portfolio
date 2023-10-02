@@ -8,7 +8,7 @@ import { tagsContext } from "../lib/Context";
 import { includedTagsFirst } from "../lib/tags";
 import { useRouter } from "next/navigation";
 
-export function BlogElement({ id, title, tags, img, date, subfolder }) {
+export function BlogElement({ id, title, tags, img, date, type }) {
   const [tagsState, setTagsState] = useContext(tagsContext);
 
   const router = useRouter();
@@ -29,9 +29,9 @@ export function BlogElement({ id, title, tags, img, date, subfolder }) {
           }}
           width={16}
           height={9}
-          className="border-0 border-r-4 border-detail-dark object-scale-down"
+          className="cursor-pointer border-0 border-r-4 border-detail-dark object-scale-down"
           onClick={() => {
-            router.push(`${subfolder === "blog" ? "blog/" : ""}posts/${id}`);
+            router.push(`posts/${type}/${id}`);
           }}
         />
         <div className="invisible border-0 pl-2 pt-2 md:visible">
@@ -43,7 +43,7 @@ export function BlogElement({ id, title, tags, img, date, subfolder }) {
         </div>
       </div>
       <div className="p-1">
-        <Link href={`posts/${id}`}>
+        <Link href={`posts/${type}/${id}`}>
           <p>{title}</p>
           <p>{date}</p>
         </Link>

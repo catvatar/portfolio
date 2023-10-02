@@ -4,7 +4,11 @@ import BlogsList from "../../components/blogs-list";
 export default function Portfolio() {
   return (
     <>
-      <BlogsList posts={getSortedPostsData("portfolio")} />
+      <BlogsList
+        posts={getSortedPostsData().filter((post) => {
+          return post.type == "portfolio";
+        })}
+      />
     </>
   );
 }

@@ -8,10 +8,7 @@ import { includedTagsFirst } from "../lib/tags";
 import Break from "./break";
 import { useSelectedLayoutSegments } from "next/navigation";
 
-export default function TagsList({ portfolioTags, blogTags }) {
-  const tags = useSelectedLayoutSegments().includes("blog")
-    ? blogTags
-    : portfolioTags;
+export default function TagsList({ tags }) {
   const show = useSelectedLayoutSegments().includes("posts");
 
   const [tagsState, setTagsState] = useContext(tagsContext);
