@@ -36,9 +36,11 @@ export function BlogElement({ id, title, tags, img, date, type }) {
         />
         <div className="invisible border-0 pl-2 pt-2 md:visible">
           <ul className="grid grid-cols-3 content-start gap-2 overflow-hidden">
-            {includedTagsFirst(tags, tagsState).map((item, index) => {
-              return <TagElement key={item} tag={item} parity={index % 2} />;
-            })}
+            {includedTagsFirst(tags ? tags : [], tagsState).map(
+              (item, index) => {
+                return <TagElement key={item} tag={item} parity={index % 2} />;
+              },
+            )}
           </ul>
         </div>
       </div>
