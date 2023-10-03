@@ -8,7 +8,7 @@ import { tagsContext } from "../lib/Context";
 import { includedTagsFirst } from "../lib/tags";
 import { useRouter } from "next/navigation";
 
-export function BlogElement({ post }) {
+export function BlogElement({ id, title, tags, img, date, type }) {
   const [tagsState, setTagsState] = useContext(tagsContext);
 
   const router = useRouter();
@@ -20,8 +20,8 @@ export function BlogElement({ post }) {
     >
       <div className="flex border-0 border-b-4 border-detail-dark md:h-3/4">
         <Image
-          src={post.img}
-          alt={`${post.id}`}
+          src={img}
+          alt={`${id}`}
           sizes="100vw"
           style={{
             width: "auto",
@@ -31,12 +31,12 @@ export function BlogElement({ post }) {
           height={9}
           className="cursor-pointer border-0 border-r-4 border-detail-dark object-scale-down"
           onClick={() => {
-            router.push(`posts/${post.type}/${post.id}`);
+            router.push(`posts/${type}/${id}`);
           }}
         />
         <div className="invisible border-0 pl-2 pt-2 md:visible">
           <ul className="grid grid-cols-3 content-start gap-2 overflow-hidden">
-            {includedTagsFirst(post.tags ? post.tags : [], tagsState).map(
+            {includedTagsFirst(tags ? tags : [], tagsState).map(
               (item, index) => {
                 return <TagElement key={item} tag={item} parity={index % 2} />;
               },
@@ -45,9 +45,9 @@ export function BlogElement({ post }) {
         </div>
       </div>
       <div className="p-1">
-        <Link href={`posts/${post.type}/${post.id}`}>
-          <p>{post.title}</p>
-          <p>{post.date}</p>
+        <Link href={`posts/${type}/${id}`}>
+          <p>{title}</p>
+          <p>{date}</p>
         </Link>
       </div>
     </div>

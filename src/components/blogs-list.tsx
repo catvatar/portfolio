@@ -24,7 +24,7 @@ export default function BlogsList({ posts }) {
       {filteredPosts.map((post) => {
         return (
           <li key={post.id}>
-            <BlogElement post={post} />
+            <BlogElement {...post} />
             <br />
           </li>
         );
