@@ -16,9 +16,9 @@ export default {
     extend: {
       colors: {
         //Aliasing colors
-        primary: colors.amber,
-        secondary: colors.orange,
-        detail: colors.yellow,
+        primary: colors.neutral,
+        secondary: colors.rose,
+        detail: colors.cyan,
 
         debug: "#ff0000",
       },
