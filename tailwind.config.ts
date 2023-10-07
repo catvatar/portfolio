@@ -11,22 +11,14 @@ export default {
   future: {
     hoverOnlyWhenSupported: true,
   },
-  darkMode: "class",
+  // darkMode: "class",
   theme: {
     extend: {
       colors: {
-        // 'primary': '#cae9ff',
-        // 'secondary-light': '#bee9e8',
-        // 'secondary-dark': '#5fa8d3',
-        // 'detail-light': '#'
-        // 'detail-dark': '#1b4965'
-
-        //Green
-        primary: "#DAD7CD",
-        "secondary-light": "#A3B18A",
-        "secondary-dark": "#588157",
-        "detail-light": "#3A5A40",
-        "detail-dark": "#344E41",
+        //Aliasing colors
+        primary: colors.amber,
+        secondary: colors.orange,
+        detail: colors.yellow,
 
         debug: "#ff0000",
       },
