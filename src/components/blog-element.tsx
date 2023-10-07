@@ -15,10 +15,10 @@ export function BlogElement({ post }) {
 
   return (
     <div
-      className="group border-4 border-b-0 border-r-0 border-detail-dark md:h-80 xl:h-96"
+      className="border-detail-500 group overflow-hidden rounded-tl-2xl border-8 border-b-0 border-r-0 md:h-80 xl:h-96"
       id="blog-element"
     >
-      <div className="flex border-0 border-b-4 border-detail-dark md:h-3/4">
+      <div className="-mt-px flex overflow-hidden md:h-3/4">
         <Image
           src={post.img}
           alt={`${post.id}`}
@@ -29,7 +29,7 @@ export function BlogElement({ post }) {
           }}
           width={16}
           height={9}
-          className="cursor-pointer border-0 border-r-4 border-detail-dark object-scale-down"
+          className="border-detail-500 bg-detail-500 cursor-pointer rounded-br-2xl border-8 border-l-0 border-t-0 object-scale-down"
           onClick={() => {
             router.push(`posts/${post.type}/${post.id}`);
           }}

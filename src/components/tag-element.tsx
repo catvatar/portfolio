@@ -4,15 +4,16 @@ import { useContext } from "react";
 
 export default function TagElement({ tag, parity }) {
   const [tagsState, setTagsState] = useContext(tagsContext);
+  const tagIsClicked = tagsState.includes(tag);
 
   return (
     <li
       className={clsx(
-        "col-auto rounded border-0 p-1 text-center text-black hover:text-white",
+        "hover:bg-secondary-300 col-auto rounded border-0 p-1 text-center text-black",
         {
-          "text-debug": tagsState.includes(tag),
-          "bg-secondary-light": parity !== 0,
-          "bg-secondary-dark": parity == 0,
+          "bg-secondary-500": parity !== 0 && !tagIsClicked,
+          "bg-secondary-400": parity == 0 && !tagIsClicked,
+          "bg-secondary-600": tagIsClicked,
         },
       )}
       onClick={() => {
