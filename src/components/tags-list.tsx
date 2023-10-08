@@ -23,7 +23,7 @@ export default function TagsList({ tags }) {
       <div className={clsx({ hidden: tagsState.length === 0 })}>
         <Break />
         <h2
-          className="bg-secondary-500 rounded text-center hover:text-white"
+          className="rounded bg-secondary-500 text-center hover:text-white"
           onClick={() => {
             setTagsState([]);
           }}

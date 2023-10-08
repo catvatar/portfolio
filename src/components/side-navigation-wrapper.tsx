@@ -11,11 +11,11 @@ export default function SideNavigationigationWrapper({ children }) {
       id="side-navigation"
       className={clsx(
         //by default isOpen is false
-        "border-detail-dark fixed bottom-0 top-14 z-auto border-r-0 bg-secondary-500",
+        "border-detail-dark fixed bottom-0 top-14 z-auto border-r-0 bg-primary-50",
         "lg:block lg:w-sidebar-small xl:w-sidebar-large",
         {
           "invisible lg:visible": !isOpen,
-          "fixed inset-x-0 bottom-0 top-14 bg-secondary-500": isOpen,
+          "fixed inset-x-0 bottom-0 top-14 bg-primary-50": isOpen,
         },
       )}
     >
