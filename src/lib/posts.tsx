@@ -31,9 +31,9 @@ function validatePosts(posts): Post[] {
 }
 
 export function getSortedPostsData(): any {
-  const postsDirContents: any = fs.readdirSync(rootDirectory, {
+  const postsDirContents = fs.readdirSync(rootDirectory, {
     recursive: true,
-  });
+  }) as string[];
   const fileNames: any = postsDirContents.filter((dir) => {
     return dir.includes(".md");
   });
