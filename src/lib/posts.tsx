@@ -30,6 +30,15 @@ function validatePosts(posts): Post[] {
   });
 }
 
+function extractId(directory) {
+  const longId = directory.replace(/\.md$/, "");
+  const idSplit =
+    process.platform == "win32" ? longId.split("\\") : longId.split("/");
+  const id = idSplit[idSplit.length - 1];
+  const type = idSplit[0];
+  return { id, type };
+}
+
 export function getSortedPostsData(): any {
   const postsDirContents = fs.readdirSync(rootDirectory, {
     recursive: true,
@@ -38,10 +47,7 @@ export function getSortedPostsData(): any {
     return dir.includes(".md");
   });
   const allPostsData = fileNames.map((dir) => {
-    const idSplit = dir.replace(/\.md$/, "").split("\\").split("/");
-
-    const id = idSplit[idSplit.length - 1];
-    const type = idSplit[0];
+    const { id, type } = extractId(dir);
 
     const fullPath = path.join(rootDirectory, dir);
     const fileContents = fs.readFileSync(fullPath, "utf8");
@@ -74,10 +80,7 @@ export function getAllPostIds() {
   });
 
   return fileNames.map((dir) => {
-    const idSplit = dir.replace(/\.md$/, "").split("\\");
-
-    const id = idSplit[idSplit.length - 1];
-    const type = idSplit.length == 2 ? idSplit[0] : "";
+    const { id, type } = extractId(dir);
     return { ...id, ...type };
   });
 }
