@@ -66,7 +66,9 @@ export function getSortedPostsData(): any {
 }
 
 export function getAllPostIds() {
-  const postsDirContents = fs.readdirSync(rootDirectory, { recursive: true });
+  const postsDirContents = fs.readdirSync(rootDirectory, {
+    recursive: true,
+  }) as string[];
   const fileNames: any = postsDirContents.filter((dir) => {
     return dir.includes(".md");
   });
