@@ -38,11 +38,10 @@ export function getSortedPostsData(): any {
     return dir.includes(".md");
   });
   const allPostsData = fileNames.map((dir) => {
-    const idSplit = dir.replace(/\.md$/, "").split("\\");
+    const idSplit = dir.replace(/\.md$/, "").split("\\").split("/");
 
     const id = idSplit[idSplit.length - 1];
     const type = idSplit[0];
-    console.log("Id: ", id, "\ntype: ", type, "\n");
 
     const fullPath = path.join(rootDirectory, dir);
     const fileContents = fs.readFileSync(fullPath, "utf8");
