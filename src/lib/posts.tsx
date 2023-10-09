@@ -3,8 +3,8 @@ import "server-only";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import { remark } from "remark";
-import html from "remark-html";
+
+import { micromark } from "micromark";
 
 const rootDirectory = path.join(process.cwd(), "src/posts");
 
@@ -87,10 +87,12 @@ export async function getPostData(id, type) {
   const matterResult = matter(fileContents);
 
   // Use remark to convert markdown into HTML string
-  const processedContent = await remark()
-    .use(html)
-    .process(matterResult.content);
-  const contentHtml = processedContent.toString();
+  // const processedContent = await remark()
+  //   .use(html)
+  //   .process(matterResult.content);
+  // const contentHtml = processedContent.toString();
+
+  const contentHtml = micromark(matterResult.content);
 
   // Combine the data with the id and contentHtml
   return {
