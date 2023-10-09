@@ -11,6 +11,10 @@ export default function BlogsList({ posts }) {
     return <></>;
   }
 
+  if (posts.length === 0) {
+    return <h2>Something went wrong!</h2>;
+  }
+
   const filteredPosts = posts.filter((item) =>
     tagsState.every((val) => item.tags.includes(val)),
   );
