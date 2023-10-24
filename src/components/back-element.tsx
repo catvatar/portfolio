@@ -15,7 +15,9 @@ export default function BackElement() {
       id="back-element"
     >
       <Link href={isBlog ? "/blog" : "/"}>
-        <div className="hover:text-gray-400">Back</div>
+        <div className="rounded border-0 bg-secondary-300 p-1 text-center hover:bg-secondary-300">
+          Back
+        </div>
       </Link>
     </div>
   );

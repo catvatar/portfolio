@@ -30,15 +30,15 @@ Postanowiłem przenieść diodę IR bezpośrednio pod telewizor i komunikować s
 Ostateczne rozwiązanie składa się z dwóch części:
 
 - Arduino które operuje diodą i symuluje pilot dla telewizora
+  ![Śmieć za telewizorem](/pilot-mieszkanie/smiec-za-telewizorem.png)
 - ESP które hostuje stronę i przekazuje sygnały z telefonu do arduino
-
-![Drugie podejście](/pilot-mieszkanie/pilot-online.png)
+  ![Drugie podejście](/pilot-mieszkanie/pilot-online.png)
 
 ## Dodatkowe Udogodnienia
 
 Mając w pokoju permanentie działający serwer ESP skorzystałem z tego żeby rozwiązać parę innych powiązanych problemów:
 
-> Zasilacz w telewizorze wydaje cichy pisk, w ciągu dnia nie jest to problem ale w nocy doprawadzało mnie to do szału.
+> Zasilacz w telewizorze wydaje cichy pisk. W ciągu dnia nie jest to problem, ale w nocy doprawadzało mnie to do szału.
 
 - Rozwiązaniem było dołączenie przekaźnika szeregowo z telewizorem w taki sposób, że teraz mogę z poziomu telefonu odłączyć i podłączyć telewizor do prądu. Ogranicza to również zużycie prądu telewizora.
 

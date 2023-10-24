@@ -19,11 +19,11 @@ export default function AboutMeElement() {
       </div>
 
       <div className="col-span-3 flex flex-col justify-center pl-2">
-        <p className="text-sm">
+        <h2 className="text-sm">
           Podchodzę z entuzjazmem do każdego pomysłu. Wyznaję zasadę
           nieustannego rozwoju, chcę z każdym projektem wiedzieć i umieć trochę
           więcej.
-        </p>
+        </h2>
       </div>
     </div>
   );
