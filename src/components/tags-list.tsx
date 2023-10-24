@@ -9,12 +9,13 @@ import Break from "./break";
 import { useSelectedLayoutSegments } from "next/navigation";
 
 export default function TagsList({ tags }) {
-  const show = useSelectedLayoutSegments().includes("posts");
+  const show = !useSelectedLayoutSegments().includes("posts");
+  if (!show) return null;
 
   const [tagsState, setTagsState] = useContext(tagsContext);
 
   return (
-    <div className={clsx({ hidden: show })}>
+    <>
       <ul className="grid grid-cols-3 gap-1" id="tags-list">
         {includedTagsFirst(tags, tagsState).map((item, index) => {
           return <TagElement key={item} tag={item} parity={index % 2} />;
@@ -31,6 +32,6 @@ export default function TagsList({ tags }) {
           Clear Tags
         </h2>
       </div>
-    </div>
+    </>
   );
 }

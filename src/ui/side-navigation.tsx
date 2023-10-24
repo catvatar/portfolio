@@ -19,7 +19,7 @@ export default function SideNavigation() {
         <AboutMeElement />
         <Break />
         <TagsList tags={uniqueTagsObjects} />
-        {/* <PostsTags posts={posts} /> */}
+        <PostsTags posts={posts} />
       </div>
       <div className="absolute left-0 w-full p-8 lg:bottom-0">
         <Break />
