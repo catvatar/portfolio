@@ -21,7 +21,7 @@ function getUniqueTags(posts) {
 }
 
 export function TagsContextProvider({ children, allPostsData }) {
-  const uniqueTags = getUniqueTags(allPostsData);
+  // const uniqueTags = getUniqueTags(allPostsData);
 
   const tagsStateObject = (() => {
     // const intermediateTags = useSearchParams()?.get("tags");

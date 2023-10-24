@@ -4,9 +4,9 @@ import clsx from "clsx";
 import TagElement from "./tag-element";
 import { useSelectedLayoutSegments } from "next/navigation";
 
-export default function PostsTags() {
+export default function PostsTags({ posts }) {
   const show = !useSelectedLayoutSegments().includes("posts");
-  const tags = ["JavaScript", "TypeScript", "React", "Next.js", "Node.js"];
+  const tags = posts.reduce((acc, item) => {}, []);
 
   return (
     <div className={clsx({ hidden: show })}>
