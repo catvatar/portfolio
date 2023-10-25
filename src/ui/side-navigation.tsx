@@ -7,7 +7,6 @@ import { getSortedPostsData } from "../lib/posts";
 import Break from "../components/break";
 import PostsTags from "../components/posts-tags-element";
 
-// Dodaj cos jak otwarty jest artykul
 //pixel w menu na telefonie
 
 export default function SideNavigation() {
@@ -22,8 +21,8 @@ export default function SideNavigation() {
         <PostsTags posts={posts} />
       </div>
       <div className="absolute left-0 w-full p-8 lg:bottom-0">
-        <Break />
-        <BlogfolioSwitchElement posts={posts} />
+        {/* <Break />
+        <BlogfolioSwitchElement posts={posts} /> */}
       </div>
     </SideNavigationigationWrapper>
   );
