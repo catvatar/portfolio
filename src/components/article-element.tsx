@@ -10,6 +10,9 @@ export default function ArticleElement({ postData }) {
         <h1 className="flex justify-center">{postData.title}</h1>
         <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
       </article>
+      <div className="flex justify-center">
+        <p className="text-sm text-gray-500">{postData.date}</p>
+      </div>
     </>
   );
 }
