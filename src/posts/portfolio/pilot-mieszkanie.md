@@ -1,47 +1,51 @@
 ---
-title: "Pilot Mieszkanie"
-tags: ["Arduino", "ESP", "IoT", "Robotics"]
+title: "Zwiększ Wygodę z Pilotem WiFi: Rozwiązanie Problemu Braku Pilota do Telewizora"
+
+tags: ["Arduino", "ESP", "IoT", "Robotics", "WiFi"]
+
 img: "/pilot-mieszkanie/miniaturka-pilot.png"
+
 date: "25-10-2023"
 ---
 
-W mieszkaniu do którego się wprowadziłem na czas studiów znajdował się telewizor bez pilota.
-Na początku planowałem po prostu z niego nie korzystać, ale zainspirowany [filmem z kanału GreatScott!](https://youtu.be/j1V2I-otdzk) postanowiłem wziąć sprawy w swoje ręce.
+## W ramach tego projektu stworzyłem zdalny pilot do sterowania telewizorem, który pierwotnie nie posiadał pilota.
 
-## Moim pierwszym rozwiązaniem był pilot na płytce stykowej
+![Drugie podejście](/pilot-mieszkanie/pilot-online.png)
+
+## Motywacja
+
+Podczas przeprowadzki na studia, w wynajmowanym przeze mnie mieszkaniu napotkałem problem braku pilota do telewizora. Zamiast pozostawiać sprawę nierozwiązana, postanowiłem podjąć działanie. Chciałem nie tylko sterować telewizorem, ale także poprawić jego funkcjonalność i wygodę użytkowania.
+
+## Proces twórczy
+
+### Pierwsze podejście: Pilot na płytce stykowej
 
 ![Pierwsze podejście](/pilot-mieszkanie/prosty-pilot.png)
 
-Pilot był zasilany bezpośrednio z 9V baterii.
-Największym wyzwaniem w tym podejściu było znalezienie odpowiednich sygnałów IR do sterowania telewizorem.
-Rozwiązaniem było pożyczenie działającego pilota od mojego współlokatora i sczytanie sygnałów z interesujących mnie przycisków za pomocą odbiornika IR.
+Moje pierwsze rozwiązanie polegało na stworzeniu prostego pilota na płytce stykowej, zasilanego bezpośrednio z 9V baterii. Głównym wyzwaniem było znalezienie odpowiednich sygnałów podczerwieni (IR) do sterowania telewizorem. Ostatecznie udało mi się pożyczyć działający pilot od współlokatora i sczytać sygnały z interesujących mnie przycisków za pomocą odbiornika IR. Posiadanie tablicy sygnałów okazało się bardzo przydane w kolejnych krokach.
 
-## Podejście drugie
+### Drugie podejście: Pilot online z wykorzystaniem Arduino i ESP
 
-Pilocik na płytce był fajny ale miał sporo problemów, między innymi:
+Pierwsze podejście miało swoje wady, dlatego postanowiłem przenieść diodę IR bezpośrednio pod telewizor i komunikować się z nią poprzez Wi-Fi. Rozwiązanie składało się z dwóch głównych części:
 
-- Krótką żywotność baterii
-- Był wyjątkowo nie poręczny
-- Dioda IR była bardzo kierunkowa co utrudniało celowanie
-- Kabelek od baterii w cały czas się łamał
+- Arduino, które operowało diodą i symulowało pilot dla telewizora.
 
-Każdy z tych problemów można było adresować pojedynczo, zdecydowałem się jednak na inne rozwiązanie.
-Postanowiłem przenieść diodę IR bezpośrednio pod telewizor i komunikować się z nią po lokalnym Wi-Fi.
-Ostateczne rozwiązanie składa się z dwóch części:
-
-- Arduino które operuje diodą i symuluje pilot dla telewizora
   ![Śmieć za telewizorem](/pilot-mieszkanie/smiec-za-telewizorem.png)
-- ESP które hostuje stronę i przekazuje sygnały z telefonu do arduino
+
+- ESP, które hostowało stronę i przekazywało sygnały z telefonu do Arduino.
+
   ![Drugie podejście](/pilot-mieszkanie/pilot-online.png)
 
-## Dodatkowe Udogodnienia
+## Ekstra
 
-Mając w pokoju permanentnie działający serwer ESP skorzystałem z tego żeby rozwiązać parę innych powiązanych problemów:
+Mając w pokoju permanentnie działający serwer ESP, skorzystałem z tego, aby rozwiązać kilka innych problemów:
 
-> Zasilacz w telewizorze wydaje cichy pisk. W ciągu dnia nie jest to problem, ale w nocy doprowadzało mnie to do szału.
+- Zasilacz w telewizorze wydawał cichy pisk, co w nocy przeszkadzało mi zasnąć. Rozwiązaniem było dołączenie przekaźnik szeregowo z telewizorem, co umożliwia zdalne odłączanie i podłączanie telewizora do prądu. To rozwiązanie nie tylko eliminuje dźwięk, ale także oszczędzała energię.
 
-- Rozwiązaniem było dołączenie przekaźnika szeregowo z telewizorem w taki sposób, że teraz mogę z poziomu telefonu odłączyć i podłączyć telewizor do prądu. Ogranicza to również zużycie prądu telewizora.
+- Chciałem dodać podświetlenie za telewizorem. Rozwiązanie okazało się proste. Użyłem tego samego zasilacza który zasila mikrokontrolery. Wystarczyło dodać jeden tranzystor do sterowania Ledami, parę linijek kodu i dodatkowe przyciski w pilocie. Teraz mogę z telefonu włączyć i sterować jasnością podświetlania telewizora.
 
-> Chciałem dodać podświetlanie za telewizorem
+Dzięki temu projektowi nie tylko zyskałem wygodny pilot do telewizora, ale także stworzyłem system, który rozwiązał kilka innych problemów w moim pokoju. Takie podejście do rozwiązywania problemów pozwala mi na rozwijanie moich umiejętności w dziedzinach robotyki i systemów sterowania.
 
-- Rozwiązanie było wyjątkowo proste, zasilacz już miałem jako, że był potrzebny do mikrokontrolerów wystarczyło dodać jeden tranzystor do sterowania zasilaniem i parę ekstra linijek kodu żeby móc sterować nim z telefonu.
+## Inspiracja
+
+Inspiracją do tego projektu był [film z kanału GreatScott!](https://youtu.be/j1V2I-otdzk).

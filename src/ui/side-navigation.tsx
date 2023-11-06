@@ -18,11 +18,14 @@ export default function SideNavigation() {
         <AboutMeElement />
         <Break />
         <TagsList tags={uniqueTagsObjects} />
-        <PostsTags posts={posts} />
+
+        <div className="overflow-hidden">
+          <PostsTags posts={posts} />
+        </div>
       </div>
-      <div className="absolute left-0 w-full p-8 lg:bottom-0">
-        {/* <Break />
-        <BlogfolioSwitchElement posts={posts} /> */}
+      <div className="absolute left-0 w-full overflow-hidden p-8 lg:bottom-0">
+        <Break />
+        <BlogfolioSwitchElement posts={posts} />
       </div>
     </SideNavigationigationWrapper>
   );

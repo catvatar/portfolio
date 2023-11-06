@@ -1,5 +1,5 @@
 ---
-title: "Pilot Mieszkanie"
+title: "Smart Pilot: Zdalne Sterowanie Telewizorem w Mieszkaniu"
 tags: ["Arduino", "ESP", "IoT", "Robotics"]
 img: "/pilot-mieszkanie/miniaturka-pilot-blog.png"
 date: "24-10-2023"
