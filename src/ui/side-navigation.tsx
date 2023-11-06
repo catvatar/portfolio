@@ -14,18 +14,19 @@ export default function SideNavigation() {
   const uniqueTagsObjects = getUniqueTags(posts);
   return (
     <SideNavigationigationWrapper>
-      <div className="p-8">
-        <AboutMeElement />
-        <Break />
-        <TagsList tags={uniqueTagsObjects} />
-
-        <div className="overflow-hidden">
+      <div className="flex h-full flex-auto flex-col">
+        <div className="flex flex-auto flex-col p-8">
+          <AboutMeElement />
+          <Break />
+          <TagsList tags={uniqueTagsObjects} />
           <PostsTags posts={posts} />
         </div>
-      </div>
-      <div className="absolute left-0 w-full overflow-hidden p-8 lg:bottom-0">
-        <Break />
-        <BlogfolioSwitchElement posts={posts} />
+        <div className="p-8 pb-12">
+          <div className="left-0 h-8 self-end">
+            <Break />
+            <BlogfolioSwitchElement posts={posts} />
+          </div>
+        </div>
       </div>
     </SideNavigationigationWrapper>
   );
