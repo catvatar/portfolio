@@ -1,6 +1,6 @@
-import BackElement from "../components/back-element";
-import MenuButton from "../components/menu-button";
-import TopNavigationWrapper from "../components/top-navigation-wrapper";
+import BackElement from "../back-element";
+import MenuButton from "../menu-button";
+import TopNavigationWrapper from "./top-navigation-wrapper";
 
 export default function TopNavigation() {
   return (

@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { GlobalNavigation } from "../../ui/global-navigation";
+import { GlobalNavigation } from "../../components/ui/global-navigation";
 import { TagsContextProvider } from "../../lib/Context";
 import { getSortedPostsData } from "../../lib/posts";
 

@@ -5,7 +5,7 @@ import { useContext } from "react";
 import { tagsContext } from "../lib/Context";
 import TagElement from "./tag-element";
 import { includedTagsFirst } from "../lib/tags";
-import Break from "./break";
+import Break from "./utility/break";
 import { useSelectedLayoutSegments } from "next/navigation";
 
 export default function TagsList({ tags }) {
