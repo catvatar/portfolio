@@ -1,7 +1,9 @@
 import { Metadata } from "next";
-import { GlobalNavigation } from "../../components/ui/global-navigation";
 import { TagsContextProvider } from "../../lib/Context";
 import { getSortedPostsData } from "../../lib/posts";
+import SideNavigation from "../../components/ui/side-navigation";
+import TopNavigation from "../../components/ui/top-navigation";
+import Margin from "../../components/utility/margin";
 
 export const metadata: Metadata = {
   title: "Aleksander Gogol Portfolio",
@@ -18,9 +20,13 @@ export default function BlogLayout({
   return (
     <section>
       <TagsContextProvider allPostsData={allPostsData}>
-        <GlobalNavigation>
-          <div className="px-16 py-8">{children}</div>
-        </GlobalNavigation>
+        <SideNavigation />
+        <div className="sticky top-0">
+          <TopNavigation />
+        </div>
+        <div className="lg:pl-sidebar-small xl:pl-sidebar-large">
+          <Margin magnitude={8}>{children}</Margin>
+        </div>
       </TagsContextProvider>
     </section>
   );

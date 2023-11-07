@@ -15,18 +15,20 @@ function validatePosts(posts): Post[] {
   const requiredProperties = ["id", "title", "img", "date", "type"];
 
   return posts.filter((post) => {
-    if (
-      requiredProperties.every((property) => {
-        const ret = property in post;
-        if (!ret) {
-          console.log("Missing ", property, " on ", post.id);
-        }
-        return ret;
-      })
-    ) {
+    if (validatePost(post, requiredProperties)) {
       return true;
     }
     return false;
+  });
+}
+
+function validatePost(post, requiredProperties: string[]) {
+  return requiredProperties.every((property) => {
+    const ret = property in post;
+    if (!ret) {
+      console.log("Missing ", property, " on ", post.id);
+    }
+    return ret;
   });
 }
 
