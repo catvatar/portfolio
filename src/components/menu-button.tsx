@@ -2,7 +2,7 @@
 import { usePathname, useSearchParams } from "next/navigation";
 import Link from "next/link";
 
-export default function MenuButton() {
+export function MenuButton() {
   const pathname = usePathname();
   const searchParams: any = useSearchParams();
   return (
@@ -20,5 +20,13 @@ export default function MenuButton() {
         Menu
       </div>
     </Link>
+  );
+}
+
+export function MenuButtonFallback() {
+  return (
+    <div className="rounded border-0 bg-primary-200 p-1 text-center hover:bg-secondary-200">
+      Menu
+    </div>
   );
 }

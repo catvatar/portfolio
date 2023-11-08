@@ -1,11 +1,11 @@
 "use client";
 
 import clsx from "clsx";
-import { useSearchParams } from "next/navigation";
+import { useContext } from "react";
+import { isMenuOpenContext } from "../../lib/Context";
 
 export default function SideNavigationigationWrapper({ children }) {
-  const isMenuOpen = useSearchParams()?.get("open") == "true";
-
+  const [isMenuOpen, setIsMenuOpen] = useContext(isMenuOpenContext);
   return (
     <div
       id="side-navigation"
