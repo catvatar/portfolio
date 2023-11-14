@@ -7,7 +7,7 @@ import { getSortedPostsData } from "../../lib/posts";
 import Break from "../utility/break";
 import PostsTags from "../posts-tags-element";
 import Margin from "../utility/margin";
-import { Suspense, useState } from "react";
+import { Suspense } from "react";
 import { UpdateMenuState } from "../update-menu-state";
 import { IsMenuOpenContextProvider } from "../../lib/Context";
 
