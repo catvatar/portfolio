@@ -1,23 +1,28 @@
 "use client";
 
 import clsx from "clsx";
-import { useContext } from "react";
-import { isMenuOpenContext } from "../../lib/Context";
+import { Suspense, useState } from "react";
+import { UpdateMenuState } from "../update-menu-state";
 
 export default function SideNavigationigationWrapper({ children }) {
-  const [isMenuOpen, setIsMenuOpen] = useContext(isMenuOpenContext);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
-    <div
-      id="side-navigation"
-      className={clsx(
-        //by default isOpen is false,
-        {
-          "invisible lg:visible": !isMenuOpen,
-          "fixed inset-x-0 bottom-0 top-14 bg-primary-50": isMenuOpen,
-        },
-      )}
-    >
-      {children}
-    </div>
+    <>
+      <Suspense>
+        <UpdateMenuState setIsMenuOpen={setIsMenuOpen} />
+      </Suspense>
+      <div
+        id="side-navigation"
+        className={clsx(
+          //by default isOpen is false,
+          {
+            "invisible lg:visible": !isMenuOpen,
+            "fixed inset-x-0 bottom-0 top-14 bg-primary-50": isMenuOpen,
+          },
+        )}
+      >
+        {children}
+      </div>
+    </>
   );
 }

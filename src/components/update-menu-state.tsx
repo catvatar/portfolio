@@ -1,12 +1,13 @@
 "use client";
 
 import { useSearchParams } from "next/navigation";
-import { useContext } from "react";
-import { isMenuOpenContext } from "../lib/Context";
+import { useEffect } from "react";
 
-export function UpdateMenuState() {
+export function UpdateMenuState({ setIsMenuOpen }) {
   const isMenuOpenSource = useSearchParams()?.get("open") == "true";
-  const [isMenuOpen, setIsMenuOpen] = useContext(isMenuOpenContext);
-  setIsMenuOpen(isMenuOpenSource);
+
+  useEffect(() => {
+    setIsMenuOpen(isMenuOpenSource);
+  }, [isMenuOpenSource]);
   return <></>;
 }

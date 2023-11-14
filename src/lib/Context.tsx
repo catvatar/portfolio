@@ -3,18 +3,6 @@
 // import { useSearchParams } from "next/navigation";
 import { createContext, useState } from "react";
 
-export const isMenuOpenContext = createContext<any>(null);
-
-export function IsMenuOpenContextProvider({ children }) {
-  const isMenuOpenState = useState<boolean>(false);
-
-  return (
-    <isMenuOpenContext.Provider value={isMenuOpenState}>
-      {children}
-    </isMenuOpenContext.Provider>
-  );
-}
-
 export const tagsContext = createContext<any>(null);
 
 function getUniqueTags(posts) {
