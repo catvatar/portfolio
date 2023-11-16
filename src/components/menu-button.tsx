@@ -16,17 +16,11 @@ export function MenuButton() {
         (searchParams.get("open") == "true" ? "false" : "true")
       }
     >
-      <div className="rounded border-0 bg-primary-200 p-1 text-center hover:bg-secondary-200">
-        Menu
-      </div>
+      Menu
     </Link>
   );
 }
 
 export function MenuButtonFallback() {
-  return (
-    <div className="rounded border-0 bg-primary-200 p-1 text-center hover:bg-secondary-200">
-      Menu
-    </div>
-  );
+  return <div>Menu</div>;
 }
