@@ -2,7 +2,7 @@
 import { usePathname, useSearchParams } from "next/navigation";
 import Link from "next/link";
 
-export function MenuButton() {
+export function MenuButton({ children }) {
   const pathname = usePathname();
   const searchParams: any = useSearchParams();
   return (
@@ -16,11 +16,7 @@ export function MenuButton() {
         (searchParams.get("open") == "true" ? "false" : "true")
       }
     >
-      Menu
+      {children}
     </Link>
   );
-}
-
-export function MenuButtonFallback() {
-  return <div>Menu</div>;
 }

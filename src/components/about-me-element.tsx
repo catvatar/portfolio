@@ -9,7 +9,7 @@ export default function AboutMeElement() {
   const source = isBlog ? "/profile-pies.png" : "/profile.png";
   return (
     <Link
-      className="grid grid-cols-5 rounded-xl border-4 border-b-0 border-r-0 border-accent-400 bg-primary-400 p-4 lg:max-xl:grid-cols-2"
+      className="grid grid-cols-5 rounded-xl bg-primary-400 p-4 shadow-xl lg:max-xl:grid-cols-2"
       href={"/Aleksander_Gogol_CV_IT.pdf"}
     >
       <div className="col-span-2 pr-2 ">

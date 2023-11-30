@@ -9,7 +9,7 @@ export default function TagElement({ tag, parity }) {
   return (
     <li
       className={clsx(
-        "col-auto overflow-hidden rounded border-0 p-1 text-center hover:bg-secondary-300",
+        "col-auto overflow-hidden rounded border-0 p-1 text-center shadow-xl hover:bg-secondary-300",
         {
           "bg-primary-300": parity !== 0 && !tagIsClicked,
           "bg-secondary-200": parity == 0 && !tagIsClicked,
